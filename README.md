@@ -13,6 +13,12 @@ Create a git submodule in your project:
 git submodule add https://github.com/Mikufied/config config
 ```
 
+Install it as a dev dependency:
+
+```bash
+pnpm add file:config -D
+```
+
 ## Usage
 
 After submodule cloned, import or include the configuration files in your project:
@@ -20,7 +26,7 @@ After submodule cloned, import or include the configuration files in your projec
 At `project/.eslintrc.js`
 
 ```ts
-const config = require('./config/eslintrc.cjs')
+const config = require('@mikufied/config/eslintrc.cjs')
 
 module.exports = config
 ```
@@ -29,7 +35,7 @@ At `project/tsconfig.json`
 
 ```json
 {
-  "extends": "./config/tsconfig.json",
+  "extends": "@mikufied/config/tsconfig.base.json",
   "//": "Put your own configuration here..."
 }
 ```
