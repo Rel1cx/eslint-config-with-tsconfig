@@ -1,17 +1,13 @@
 const { createConfig } = require('eslint-config-galex/dist/createConfig')
-const {
-    createReactOverride,
-} = require('eslint-config-galex/dist/overrides/react')
-const {
-    createTypeScriptOverride,
-} = require('eslint-config-galex/dist/overrides/typescript')
+const { createReactOverride } = require('eslint-config-galex/dist/overrides/react')
+const { createTypeScriptOverride } = require('eslint-config-galex/dist/overrides/typescript')
 
 const tsOverrideConfig = {
     react: {
-        hasReact: true,
+        hasReact: true
     },
     typescript: {
-        hasTypeScript: true,
+        hasTypeScript: true
     },
     rules: {
         'no-cap': 'off',
@@ -86,16 +82,16 @@ const tsOverrideConfig = {
         'sonarjs/no-identical-conditions': 'error',
         'sonarjs/no-use-of-empty-return-value': 'off',
         'sonarjs/no-gratuitous-expressions': 'error',
-        'sonarjs/no-ignored-return': 'error',
-    },
+        'sonarjs/no-ignored-return': 'error'
+    }
 }
 
 const reactOverrideConfig = {
     react: {
-        hasReact: true,
+        hasReact: true
     },
     typescript: {
-        hasTypeScript: true,
+        hasTypeScript: true
     },
     rules: {
         'no-cap': 'off',
@@ -124,8 +120,8 @@ const reactOverrideConfig = {
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/interactive-supports-focus': 'off',
         'jsx-a11y/control-has-associated-label': 'off',
-        'jsx-a11y/no-noninteractive-element-interactions': 'off',
-    },
+        'jsx-a11y/no-noninteractive-element-interactions': 'off'
+    }
 }
 
 const tsOverride = createTypeScriptOverride(tsOverrideConfig)
@@ -136,7 +132,7 @@ const finalConfig = createConfig({
     root: true,
     env: {
         browser: true,
-        es2022: true,
+        es2022: true
     },
     extends: [
         'plugin:import/recommended',
@@ -146,7 +142,7 @@ const finalConfig = createConfig({
         'plugin:functional/strict',
         'plugin:functional/stylistic',
         'plugin:functional/external-recommended',
-        'plugin:functional/external-typescript-recommended',
+        'plugin:functional/external-typescript-recommended'
     ],
     plugins: ['simple-import-sort', 'functional', 'log'],
     incrementalAdoption: false,
@@ -158,15 +154,15 @@ const finalConfig = createConfig({
             env: {
                 node: true,
                 es2021: true,
-                browser: false,
+                browser: false
             },
             rules: {
                 'import/no-unresolved': 'off',
-                'import/no-default-export': 'off',
-            },
-        },
+                'import/no-default-export': 'off'
+            }
+        }
     ],
-    ignorePatterns: ['node_modules', 'dist'],
+    ignorePatterns: ['node_modules', 'dist']
 })
 
 module.exports = finalConfig
