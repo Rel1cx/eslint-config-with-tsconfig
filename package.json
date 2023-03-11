@@ -1,22 +1,21 @@
 {
-    "name": "@mikufied/config",
+    "name": "eslint-config-with-typescript",
     "version": "0.0.0",
     "type": "module",
+    "main": "index.js",
     "description": "Mikufied's frontend config",
-    "files": [
-        "eslintrc.cjs",
-        "tsconfig.base.json"
-    ],
     "dependencies": {
-        "typescript": ">=4.5.0",
-        "eslint": ">=8.36.0",
-        "eslint-config-galex": ">=4.4.2",
-        "eslint-import-resolver-typescript": ">=3.5.3",
-        "eslint-plugin-functional": ">=5.0.6",
-        "eslint-plugin-html": ">=7.1.0",
-        "eslint-plugin-import": ">=2.27.5",
-        "eslint-plugin-log": ">=1.2.7",
-        "eslint-plugin-simple-import-sort": ">=10.0.0",
-        "@typescript-eslint/type-utils": ">=5.54.1"
+        "eslint-config-next": "latest",
+        "eslint-config-prettier": "latest",
+        "eslint-config-turbo": "latest",
+        "typescript": "latest",
+        "eslint": "latest",
+        "eslint-config-galex": "latest",
+        "eslint-import-resolver-typescript": "latest",
+        "eslint-plugin-functional": "latest",
+        "eslint-plugin-html": "latest",
+        "eslint-plugin-import": "latest",
+        "eslint-plugin-simple-import-sort": "latest",
+        "@typescript-eslint/type-utils": "latest"
     }
 }

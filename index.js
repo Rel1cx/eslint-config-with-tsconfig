@@ -104,7 +104,7 @@ const reactOverrideConfig = {
         'react/jsx-key': 'error',
         'react/jsx-wrap-multilines': 'off',
         'react/no-array-index-key': 'warn',
-        'react/react-in-jsx-scope': 'error',
+        'react/react-in-jsx-scope': 'off',
         'react-hooks/rules-of-hooks': 'warn',
         'react-hooks/exhaustive-deps': 'warn',
         'react/jsx-props-no-spreading': 'off',
@@ -129,39 +129,30 @@ const tsOverride = createTypeScriptOverride(tsOverrideConfig)
 const reactOverride = createReactOverride(reactOverrideConfig)
 
 const finalConfig = createConfig({
-    root: true,
     env: {
         browser: true,
         es2021: true
     },
     extends: [
+        'next',
+        'turbo',
+        'prettier',
         'plugin:import/recommended',
         'plugin:sonarjs/recommended',
         'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
         'plugin:functional/strict',
         'plugin:functional/stylistic',
         'plugin:functional/external-recommended',
         'plugin:functional/external-typescript-recommended'
     ],
-    plugins: ['simple-import-sort', 'functional', 'log'],
-    incrementalAdoption: false,
-    overrides: [
-        tsOverride,
-        reactOverride,
-        {
-            files: ['.eslintrc.js', '.eslintrc.cjs'],
-            env: {
-                node: true,
-                es2021: true,
-                browser: false
-            },
-            rules: {
-                'import/no-default-export': 'off'
-            }
+    plugins: ['simple-import-sort', 'functional'],
+    parserOptions: {
+        babelOptions: {
+            presets: [require.resolve('next/babel')]
         }
-    ],
-    ignorePatterns: ['node_modules', 'dist']
+    },
+    incrementalAdoption: false,
+    overrides: [tsOverride, reactOverride]
 })
 
 module.exports = finalConfig

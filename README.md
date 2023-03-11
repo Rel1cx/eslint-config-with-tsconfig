@@ -21,7 +21,7 @@ pnpm add file:config -D
 
 ## Usage
 
-After submodule cloned, import or include the configuration files in your project:
+After submodule cloned, import the configuration files in your project:
 
 At `project/.eslintrc.js`
 
