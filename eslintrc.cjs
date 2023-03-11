@@ -150,14 +150,13 @@ const finalConfig = createConfig({
         tsOverride,
         reactOverride,
         {
-            files: ['./scripts/**/*.ts', 'vite.config.ts', '.eslintrc.cjs'],
+            files: ['.eslintrc.js', '.eslintrc.cjs'],
             env: {
                 node: true,
                 es2021: true,
                 browser: false
             },
             rules: {
-                'import/no-unresolved': 'off',
                 'import/no-default-export': 'off'
             }
         }
