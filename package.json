@@ -1,8 +1,14 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "type": "module",
     "main": "index.js",
+    "files": [
+        "index.js",
+        "tsconfig.base.json",
+        "tsconfig.nextjs.json",
+        "tsconfig.react-library.json"
+    ],
     "description": "Mikufied's frontend config",
     "peerDependencies": {
         "typescript": ">=4.9.5",
