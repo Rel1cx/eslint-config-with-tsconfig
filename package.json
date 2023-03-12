@@ -1,15 +1,17 @@
 {
-    "name": "eslint-config-with-typescript",
-    "version": "0.0.0",
+    "name": "eslint-config-with-tsconfig",
+    "version": "0.0.1",
     "type": "module",
     "main": "index.js",
     "description": "Mikufied's frontend config",
+    "peerDependencies": {
+        "typescript": ">=4.9.5",
+        "eslint": ">=8.0.0"
+    },
     "dependencies": {
         "eslint-config-next": "latest",
         "eslint-config-prettier": "latest",
         "eslint-config-turbo": "latest",
-        "typescript": "latest",
-        "eslint": "latest",
         "eslint-config-galex": "latest",
         "eslint-import-resolver-typescript": "latest",
         "eslint-plugin-functional": "latest",

@@ -1,13 +1,17 @@
 const { createConfig } = require('eslint-config-galex/dist/createConfig')
-const { createReactOverride } = require('eslint-config-galex/dist/overrides/react')
-const { createTypeScriptOverride } = require('eslint-config-galex/dist/overrides/typescript')
+const {
+    createReactOverride,
+} = require('eslint-config-galex/dist/overrides/react')
+const {
+    createTypeScriptOverride,
+} = require('eslint-config-galex/dist/overrides/typescript')
 
 const tsOverrideConfig = {
     react: {
-        hasReact: true
+        hasReact: true,
     },
     typescript: {
-        hasTypeScript: true
+        hasTypeScript: true,
     },
     rules: {
         'no-cap': 'off',
@@ -82,16 +86,16 @@ const tsOverrideConfig = {
         'sonarjs/no-identical-conditions': 'error',
         'sonarjs/no-use-of-empty-return-value': 'off',
         'sonarjs/no-gratuitous-expressions': 'error',
-        'sonarjs/no-ignored-return': 'error'
-    }
+        'sonarjs/no-ignored-return': 'error',
+    },
 }
 
 const reactOverrideConfig = {
     react: {
-        hasReact: true
+        hasReact: true,
     },
     typescript: {
-        hasTypeScript: true
+        hasTypeScript: true,
     },
     rules: {
         'no-cap': 'off',
@@ -120,8 +124,8 @@ const reactOverrideConfig = {
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/interactive-supports-focus': 'off',
         'jsx-a11y/control-has-associated-label': 'off',
-        'jsx-a11y/no-noninteractive-element-interactions': 'off'
-    }
+        'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    },
 }
 
 const tsOverride = createTypeScriptOverride(tsOverrideConfig)
@@ -131,7 +135,7 @@ const reactOverride = createReactOverride(reactOverrideConfig)
 const finalConfig = createConfig({
     env: {
         browser: true,
-        es2021: true
+        es2021: true,
     },
     extends: [
         'next',
@@ -143,16 +147,16 @@ const finalConfig = createConfig({
         'plugin:functional/strict',
         'plugin:functional/stylistic',
         'plugin:functional/external-recommended',
-        'plugin:functional/external-typescript-recommended'
+        'plugin:functional/external-typescript-recommended',
     ],
     plugins: ['simple-import-sort', 'functional'],
     parserOptions: {
         babelOptions: {
-            presets: [require.resolve('next/babel')]
-        }
+            presets: [require.resolve('next/babel')],
+        },
     },
     incrementalAdoption: false,
-    overrides: [tsOverride, reactOverride]
+    overrides: [tsOverride, reactOverride],
 })
 
 module.exports = finalConfig
