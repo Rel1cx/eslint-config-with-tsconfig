@@ -1,7 +1,6 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "1.0.0",
-    "type": "module",
+    "version": "1.0.1",
     "main": "index.js",
     "files": [
         "index.js",
