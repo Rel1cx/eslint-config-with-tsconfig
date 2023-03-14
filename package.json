@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "main": "index.js",
     "files": [
         "index.js",
@@ -13,9 +13,7 @@
         "eslint": ">=8.0.0"
     },
     "dependencies": {
-        "eslint-config-next": "latest",
         "eslint-config-prettier": "latest",
-        "eslint-config-turbo": "latest",
         "eslint-config-galex": "latest",
         "eslint-import-resolver-typescript": "latest",
         "eslint-plugin-functional": "latest",

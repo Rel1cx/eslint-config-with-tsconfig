@@ -138,8 +138,8 @@ const finalConfig = createConfig({
         es2021: true,
     },
     extends: [
-        'next',
-        'turbo',
+        // 'next',
+        // 'turbo',
         'prettier',
         'plugin:import/recommended',
         'plugin:sonarjs/recommended',
@@ -150,11 +150,11 @@ const finalConfig = createConfig({
         'plugin:functional/external-typescript-recommended',
     ],
     plugins: ['simple-import-sort', 'functional'],
-    parserOptions: {
-        babelOptions: {
-            presets: [require.resolve('next/babel')],
-        },
-    },
+    // parserOptions: {
+    //     babelOptions: {
+    //         presets: [require.resolve('next/babel')],
+    //     },
+    // },
     incrementalAdoption: false,
     overrides: [tsOverride, reactOverride],
 })
