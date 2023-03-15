@@ -6,6 +6,10 @@ const {
     createTypeScriptOverride,
 } = require('eslint-config-galex/dist/overrides/typescript')
 
+const { existsSync } = require('fs')
+
+const hasTsconfigDotNode = () => existsSync('./tsconfig.node.json')
+
 const tsOverrideConfig = {
     react: {
         hasReact: true,
@@ -128,6 +132,13 @@ const reactOverrideConfig = {
     },
 }
 
+const xDotConfigOverride = {
+    files: ['*.config.ts'],
+    parserOptions: {
+        project: 'tsconfig.node.json',
+    },
+}
+
 const tsOverride = createTypeScriptOverride(tsOverrideConfig)
 
 const reactOverride = createReactOverride(reactOverrideConfig)
@@ -156,7 +167,11 @@ const finalConfig = createConfig({
     //     },
     // },
     incrementalAdoption: false,
-    overrides: [tsOverride, reactOverride],
+    overrides: [
+        tsOverride,
+        reactOverride,
+        hasTsconfigDotNode && xDotConfigOverride,
+    ].filter(Boolean),
 })
 
 module.exports = finalConfig
