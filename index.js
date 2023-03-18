@@ -79,6 +79,7 @@ const tsOverrideConfig = {
         '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
 
+        'unicorn/prefer-top-level-await': 'off',
         'sonarjs/no-duplicate-string': 'off',
         'sonarjs/no-identical-functions': 'off',
         'sonarjs/no-identical-expressions': ['error'],
