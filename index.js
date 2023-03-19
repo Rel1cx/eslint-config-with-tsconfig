@@ -149,6 +149,11 @@ const tsOverride = createTypeScriptOverride(tsOverrideConfig)
 
 const reactOverride = createReactOverride(reactOverrideConfig)
 
+const svelteOverride = {
+    files: ['*.svelte'],
+    processor: 'svelte3/svelte3',
+}
+
 const finalConfig = createConfig({
     env: {
         browser: true,
@@ -165,7 +170,11 @@ const finalConfig = createConfig({
         'plugin:functional/external-typescript-recommended',
         hasSvelte && 'plugin:svelte/recommended',
     ].filter(Boolean),
-    plugins: ['simple-import-sort', 'functional'],
+    plugins: [
+        'simple-import-sort',
+        'functional',
+        hasSvelte && 'svelte3',
+    ].filter(Boolean),
     // parserOptions: {
     //     babelOptions: {
     //         presets: [require.resolve('next/babel')],
@@ -175,8 +184,12 @@ const finalConfig = createConfig({
     overrides: [
         tsOverride,
         hasReact && reactOverride,
+        hasSvelte && svelteOverride,
         hasTsconfigDotNode && xDotConfigOverride,
     ].filter(Boolean),
+    settings: {
+        'svelte3/typescript': true,
+    },
 })
 
 module.exports = finalConfig
