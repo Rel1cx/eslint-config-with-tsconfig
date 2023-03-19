@@ -7,12 +7,17 @@ const {
 } = require('eslint-config-galex/dist/overrides/typescript')
 
 const { existsSync } = require('fs')
+const packageJson = require('./package.json')
 
-const hasTsconfigDotNode = () => existsSync('./tsconfig.node.json')
+const hasReact =
+    packageJson.dependencies?.react || packageJson.devDependencies?.react
+const hasSvelte =
+    packageJson.dependencies?.svelte || packageJson.devDependencies?.svelte
+const hasTsconfigDotNode = existsSync('./tsconfig.node.json')
 
 const tsOverrideConfig = {
     react: {
-        hasReact: true,
+        hasReact,
     },
     typescript: {
         hasTypeScript: true,
@@ -150,8 +155,6 @@ const finalConfig = createConfig({
         es2021: true,
     },
     extends: [
-        // 'next',
-        // 'turbo',
         'prettier',
         'plugin:import/recommended',
         'plugin:sonarjs/recommended',
@@ -160,7 +163,8 @@ const finalConfig = createConfig({
         'plugin:functional/stylistic',
         'plugin:functional/external-recommended',
         'plugin:functional/external-typescript-recommended',
-    ],
+        hasSvelte && 'plugin:svelte/recommended',
+    ].filter(Boolean),
     plugins: ['simple-import-sort', 'functional'],
     // parserOptions: {
     //     babelOptions: {
@@ -170,7 +174,7 @@ const finalConfig = createConfig({
     incrementalAdoption: false,
     overrides: [
         tsOverride,
-        reactOverride,
+        hasReact && reactOverride,
         hasTsconfigDotNode && xDotConfigOverride,
     ].filter(Boolean),
 })

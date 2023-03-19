@@ -1,25 +1,20 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "main": "index.js",
-    "files": [
-        "index.js",
-        "tsconfig.base.json",
-        "tsconfig.nextjs.json",
-        "tsconfig.react-library.json"
-    ],
     "description": "Mikufied's frontend config",
     "peerDependencies": {
         "eslint": ">=8.0.0"
     },
     "dependencies": {
-        "eslint-config-prettier": "latest",
-        "eslint-config-galex": "latest",
-        "eslint-import-resolver-typescript": "latest",
-        "eslint-plugin-functional": "latest",
-        "eslint-plugin-html": "latest",
-        "eslint-plugin-import": "latest",
-        "eslint-plugin-simple-import-sort": "latest",
-        "@typescript-eslint/type-utils": "latest"
+        "@typescript-eslint/type-utils": "^5.55.0",
+        "eslint-config-galex": "^4.4.2",
+        "eslint-config-prettier": "^8.7.0",
+        "eslint-import-resolver-typescript": "^3.5.3",
+        "eslint-plugin-functional": "^5.0.6",
+        "eslint-plugin-html": "^7.1.0",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-simple-import-sort": "^10.0.0",
+        "eslint-plugin-svelte": "^2.22.0"
     }
 }
