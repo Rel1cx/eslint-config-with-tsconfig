@@ -7,11 +7,19 @@ const {
 } = require('eslint-config-galex/dist/overrides/typescript')
 
 const { existsSync } = require('fs')
-const packageJson = require('./package.json')
 
-const hasReact = packageJson.dependencies?.react !== undefined
+const testDependencies = (name) => {
+    try {
+        require.resolve(name)
+        return true
+    } catch (e) {
+        return false
+    }
+}
 
-const hasSvelte = packageJson.dependencies?.svelte !== undefined
+const hasReact = testDependencies('react')
+
+const hasSvelte = testDependencies('svelte')
 
 const hasTsconfigDotNode = existsSync('./tsconfig.node.json')
 
