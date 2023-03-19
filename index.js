@@ -168,7 +168,6 @@ const finalConfig = createConfig({
         'plugin:functional/stylistic',
         'plugin:functional/external-recommended',
         'plugin:functional/external-typescript-recommended',
-        hasSvelte && 'plugin:svelte/recommended',
     ].filter(Boolean),
     plugins: [
         'simple-import-sort',
