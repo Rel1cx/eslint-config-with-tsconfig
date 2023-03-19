@@ -9,10 +9,10 @@ const {
 const { existsSync } = require('fs')
 const packageJson = require('./package.json')
 
-const hasReact =
-    packageJson.dependencies?.react || packageJson.devDependencies?.react
-const hasSvelte =
-    packageJson.dependencies?.svelte || packageJson.devDependencies?.svelte
+const hasReact = packageJson.dependencies?.react !== undefined
+
+const hasSvelte = packageJson.dependencies?.svelte !== undefined
+
 const hasTsconfigDotNode = existsSync('./tsconfig.node.json')
 
 const tsOverrideConfig = {
