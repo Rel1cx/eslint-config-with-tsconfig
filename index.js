@@ -32,7 +32,8 @@ const tsOverrideConfig = {
     },
     rules: {
         'no-cap': 'off',
-        camelcase: 'error',
+        camelcase: 'warn',
+        'spaced-comment': 'off',
         'import/order': 'off',
         'import/no-cycle': 'error',
         'import/namespace': 'off',
