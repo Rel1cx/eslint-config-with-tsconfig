@@ -8,7 +8,7 @@ const {
 
 const { existsSync } = require('fs')
 
-const testDependencies = (name) => {
+const tryResolve = (name) => {
     try {
         require.resolve(name)
         return true
@@ -17,9 +17,9 @@ const testDependencies = (name) => {
     }
 }
 
-const hasReact = testDependencies('react')
+const hasReact = tryResolve('react')
 
-const hasSvelte = testDependencies('svelte')
+const hasSvelte = tryResolve('svelte')
 
 const hasTsconfigDotNode = existsSync('./tsconfig.node.json')
 
