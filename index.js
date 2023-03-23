@@ -56,6 +56,14 @@ const tsOverrideConfig = {
         'no-unused-vars': 'off',
         'no-redeclare': 'off',
         'no-use-before-define': 'error',
+        'no-unsafe-optional-chaining': 'error',
+        'no-restricted-syntax': [
+            'error',
+            {
+                selector: 'OptionalMemberExpression',
+                message: 'Optional Chaining not allowed',
+            },
+        ],
         'dot-notation': 'off',
         'promise/prefer-await-to-then': 'off',
         'require-unicode-regexp': 'off',
