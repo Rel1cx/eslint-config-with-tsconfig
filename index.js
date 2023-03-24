@@ -19,8 +19,6 @@ const tryResolve = (name) => {
 
 const hasReact = tryResolve('react')
 
-const hasSvelte = tryResolve('svelte')
-
 const hasTsconfigDotNode = existsSync('./tsconfig.node.json')
 
 const tsOverrideConfig = {
@@ -166,11 +164,6 @@ const tsOverride = createTypeScriptOverride(tsOverrideConfig)
 
 const reactOverride = createReactOverride(reactOverrideConfig)
 
-const svelteOverride = {
-    files: ['*.svelte'],
-    processor: 'svelte3/svelte3',
-}
-
 const finalConfig = createConfig({
     env: {
         browser: true,
@@ -181,31 +174,20 @@ const finalConfig = createConfig({
         'plugin:import/recommended',
         'plugin:sonarjs/recommended',
         'plugin:@typescript-eslint/recommended',
+        hasReact && 'sukka/react',
+        'sukka/typescript',
         'plugin:functional/strict',
         'plugin:functional/stylistic',
         'plugin:functional/external-recommended',
         'plugin:functional/external-typescript-recommended',
     ].filter(Boolean),
-    plugins: [
-        'simple-import-sort',
-        'functional',
-        hasSvelte && 'svelte3',
-    ].filter(Boolean),
-    // parserOptions: {
-    //     babelOptions: {
-    //         presets: [require.resolve('next/babel')],
-    //     },
-    // },
+    plugins: ['simple-import-sort', 'functional'].filter(Boolean),
     incrementalAdoption: false,
     overrides: [
         tsOverride,
         hasReact && reactOverride,
-        hasSvelte && svelteOverride,
         hasTsconfigDotNode && xDotConfigOverride,
     ].filter(Boolean),
-    settings: {
-        'svelte3/typescript': true,
-    },
 })
 
 module.exports = finalConfig
