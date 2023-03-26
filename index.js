@@ -10,7 +10,7 @@ const tryResolve = (name) => {
     try {
         require.resolve(name)
         return true
-    } catch (e) {
+    } catch {
         return false
     }
 }
@@ -25,7 +25,6 @@ const tsOverrideConfig = {
         hasTypeScript: true,
     },
     rules: {
-        'no-cap': 'off',
         camelcase: 'warn',
         'spaced-comment': 'off',
         'import/order': 'off',
@@ -54,7 +53,7 @@ const tsOverrideConfig = {
         'no-restricted-syntax': [
             'error',
             {
-                selector: 'OptionalMemberExpression',
+                selector: 'MemberExpression[optional=true]',
                 message: 'Optional Chaining not allowed',
             },
         ],
@@ -62,6 +61,7 @@ const tsOverrideConfig = {
         'promise/prefer-await-to-then': 'off',
         'require-unicode-regexp': 'off',
         'functional/prefer-tacit': 'warn',
+        'functional/immutable-data': 'warn',
         'unicorn/no-useless-undefined': 'off',
         'unicorn/prefer-math-trunc': 'off',
         'unicorn/catch-error-name': 'off',
@@ -85,7 +85,8 @@ const tsOverrideConfig = {
         '@typescript-eslint/no-floating-promises': 'off',
         '@typescript-eslint/no-unused-expressions': 'off',
         '@typescript-eslint/no-unnecessary-qualifier': 'off',
-        '@typescript-eslint/prefer-nullish-coalescing': 'off',
+        '@typescript-eslint/prefer-optional-chain': 'off',
+        '@typescript-eslint/prefer-nullish-coalescing': 'warn',
         '@typescript-eslint/prefer-literal-enum-member': 'off',
         '@typescript-eslint/consistent-type-assertions': 'warn',
         '@typescript-eslint/consistent-type-definitions': 'off',
@@ -119,7 +120,6 @@ const reactOverrideConfig = {
         hasTypeScript: true,
     },
     rules: {
-        'no-cap': 'off',
         'react/jsx-pascal-case': 'off',
         'react/prop-types': 'off',
         'react/display-name': 'off',
