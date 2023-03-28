@@ -28,7 +28,6 @@
         "allowUnusedLabels": false,
         "allowUnreachableCode": false,
         "exactOptionalPropertyTypes": true,
-        "verbatimModuleSyntax": true,
         "checkJs": true
     },
     "exclude": ["node_modules"]
