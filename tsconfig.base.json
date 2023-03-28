@@ -16,10 +16,6 @@
         "pretty": true,
         "strict": true,
         "alwaysStrict": true,
-        "strictBindCallApply": true,
-        "strictFunctionTypes": true,
-        "strictNullChecks": true,
-        "strictPropertyInitialization": true,
         "noImplicitThis": true,
         "noUncheckedIndexedAccess": true,
         "noFallthroughCasesInSwitch": true,
@@ -27,7 +23,13 @@
         "noImplicitOverride": true,
         "noUnusedParameters": false,
         "noUnusedLocals": false,
-        "preserveConstEnums": true
+        "useUnknownInCatchVariables": true,
+        "preserveConstEnums": true,
+        "allowUnusedLabels": false,
+        "allowUnreachableCode": false,
+        "exactOptionalPropertyTypes": true,
+        "verbatimModuleSyntax": true,
+        "checkJs": true
     },
     "exclude": ["node_modules"]
 }
