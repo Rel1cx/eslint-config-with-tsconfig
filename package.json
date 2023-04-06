@@ -8,11 +8,10 @@
         "typescript": ">=5.0.0"
     },
     "dependencies": {
-        "@typescript-eslint/type-utils": "^5.56.0",
-        "eslint-config-galex": "^4.5.1",
+        "@typescript-eslint/type-utils": "^5.57.1",
+        "eslint-config-galex": "^4.5.2",
         "eslint-config-prettier": "^8.8.0",
-        "eslint-config-sukka": "^1.7.2",
-        "eslint-import-resolver-typescript": "^3.5.3",
+        "eslint-import-resolver-typescript": "^3.5.5",
         "eslint-plugin-functional": "^5.0.7",
         "eslint-plugin-html": "^7.1.0",
         "eslint-plugin-import": "^2.27.5",

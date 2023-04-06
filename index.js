@@ -163,8 +163,6 @@ const finalConfig = createConfig({
         'plugin:import/recommended',
         'plugin:sonarjs/recommended',
         'plugin:@typescript-eslint/recommended',
-        hasReact && 'sukka/react',
-        'sukka/typescript',
         'plugin:functional/strict',
         'plugin:functional/stylistic',
         'plugin:functional/external-recommended',

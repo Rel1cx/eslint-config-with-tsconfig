@@ -8,4 +8,3 @@ This is a basic front-end configuration for a new project. It includes:
 ## Credits
 
 - [eslint-config-galex](https://github.com/ljosberinn/eslint-config-galex)
-- [eslint-config-sukka](https://github.com/SukkaW/eslint-config-sukka)
