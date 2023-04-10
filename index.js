@@ -1,6 +1,7 @@
 const { createConfig } = require('eslint-config-galex/dist/createConfig');
 const { createReactOverride } = require('eslint-config-galex/dist/overrides/react');
 const { createTypeScriptOverride } = require('eslint-config-galex/dist/overrides/typescript');
+const { getTsconfig } = require('get-tsconfig')
 const { tryResolve } = require('./helper');
 
 const hasReact = tryResolve('react');
@@ -157,6 +158,14 @@ const finalConfig = createConfig({
     ].filter(Boolean),
     plugins: ['simple-import-sort', 'functional'].filter(Boolean),
     incrementalAdoption: false,
+    settings: {
+        'import/resolver': {
+            typescript: {
+                alwaysTryTypes: true,
+                project: getTsconfig()?.path ?? 'tsconfig.json'
+            }
+        }
+    },
     overrides: [tsOverride, hasReact && reactOverride].filter(Boolean)
 });
 

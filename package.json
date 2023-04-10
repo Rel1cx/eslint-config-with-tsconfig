@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "1.2.7",
+    "version": "1.2.8",
     "main": "index.js",
     "description": "Mikufied's frontend config",
     "scripts": {
@@ -19,7 +19,8 @@
         "eslint-plugin-functional": "^5.0.7",
         "eslint-plugin-html": "^7.1.0",
         "eslint-plugin-import": "^2.27.5",
-        "eslint-plugin-simple-import-sort": "^10.0.0"
+        "eslint-plugin-simple-import-sort": "^10.0.0",
+        "get-tsconfig": "^4.5.0"
     },
     "devDependencies": {
         "eslint": "8.38.0",
