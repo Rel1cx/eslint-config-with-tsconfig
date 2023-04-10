@@ -2,13 +2,8 @@
     "$schema": "https://json.schemastore.org/tsconfig",
     "display": "Default",
     "compilerOptions": {
-        "composite": false,
-        "declaration": true,
-        "declarationMap": true,
         "esModuleInterop": true,
-        "inlineSources": false,
         "moduleResolution": "node",
-        "preserveWatchOutput": true,
         "skipLibCheck": true,
         "noImplicitAny": true,
         "isolatedModules": true,
@@ -29,6 +24,5 @@
         "allowUnreachableCode": false,
         "exactOptionalPropertyTypes": true,
         "checkJs": true
-    },
-    "exclude": ["node_modules"]
+    }
 }
