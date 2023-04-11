@@ -1,3 +1,4 @@
+const { isPackageExists } = require('local-pkg')
 const { createConfig } = require('eslint-config-galex/dist/createConfig')
 const {
     createReactOverride,
@@ -6,9 +7,9 @@ const {
     createTypeScriptOverride,
 } = require('eslint-config-galex/dist/overrides/typescript')
 const { getTsconfig } = require('get-tsconfig')
-const { tryResolve } = require('./helper')
+const confusingBrowserGlobals = require('confusing-browser-globals')
 
-const hasReact = tryResolve('react')
+const hasReact = isPackageExists('react')
 
 const tsOverrideConfig = {
     react: {
@@ -37,7 +38,15 @@ const tsOverrideConfig = {
         '@typescript-eslint/no-unnecessary-qualifier': 'warn',
         '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
         '@typescript-eslint/no-unused-expressions': 'warn',
-        '@typescript-eslint/no-unused-vars': 'warn',
+        'sort-destructure-keys/sort-destructure-keys': 'warn',
+        '@typescript-eslint/no-unused-vars': [
+            'error',
+            {
+                // Allow to name unused vars with _
+                argsIgnorePattern: '^_',
+            },
+        ],
+        '@typescript-eslint/prefer-ts-expect-error': 'error',
         '@typescript-eslint/prefer-enum-initializers': 'off',
         '@typescript-eslint/prefer-literal-enum-member': 'off',
         '@typescript-eslint/prefer-nullish-coalescing': 'warn',
@@ -73,14 +82,26 @@ const tsOverrideConfig = {
         'etc/throw-error': 'warn',
 
         indent: 'warn',
+        'max-len': [
+            'error',
+            {
+                code: 120,
+            },
+        ],
+        'no-multiple-empty-lines': ['error', { max: 2, maxBOF: 1 }],
+        'quote-props': ['error', 'as-needed'],
+        quotes: ['error', 'single', { allowTemplateLiterals: true }],
         'no-bitwise': 'off',
         'no-param-reassign': 'off',
         'no-redeclare': 'warn',
         'no-unsafe-optional-chaining': 'error',
         'no-unused-vars': 'warn',
+        'no-else-return': 'error',
+        'no-lonely-if': 'error',
         'no-use-before-define': 'error',
         'promise/prefer-await-to-then': 'warn',
         'require-unicode-regexp': 'warn',
+        'func-style': ['error', 'expression'],
 
         'sonarjs/cognitive-complexity': ['warn', 32],
         'sonarjs/no-all-duplicated-branches': 'error',
@@ -109,6 +130,7 @@ const tsOverrideConfig = {
         'unicorn/template-indent': 'warn',
         camelcase: 'warn',
 
+        'no-restricted-globals': ['error', ...confusingBrowserGlobals],
         'no-restricted-syntax': [
             'error',
             {
@@ -141,8 +163,9 @@ const reactOverrideConfig = {
         'react/function-component-definition': 'off',
         'react/jsx-handler-names': 'off',
         'react/jsx-indent-props': 'off',
-        'react/jsx-indent': 'off',
+        'react/jsx-indent': 'warn',
         'react/jsx-key': 'error',
+        'react/jsx-sort-props': 'warn',
         'react/jsx-no-useless-fragment': 'off',
         'react/jsx-one-expression-per-line': 'off',
         'react/jsx-pascal-case': 'off',
@@ -177,12 +200,19 @@ const finalConfig = createConfig({
         'plugin:import/recommended',
         'plugin:sonarjs/recommended',
         'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
         'plugin:functional/strict',
         'plugin:functional/stylistic',
         'plugin:functional/external-recommended',
         'plugin:functional/external-typescript-recommended',
+        'plugin:typescript-sort-keys/recommended',
     ].filter(Boolean),
-    plugins: ['simple-import-sort', 'functional'].filter(Boolean),
+    plugins: [
+        'simple-import-sort',
+        'sort-destructure-keys',
+        'typescript-sort-keys',
+        'functional',
+    ].filter(Boolean),
     incrementalAdoption: false,
     settings: {
         'import/resolver': {
