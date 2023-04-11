@@ -1,160 +1,186 @@
-const { createConfig } = require('eslint-config-galex/dist/createConfig');
-const { createReactOverride } = require('eslint-config-galex/dist/overrides/react');
-const { createTypeScriptOverride } = require('eslint-config-galex/dist/overrides/typescript');
+const { createConfig } = require('eslint-config-galex/dist/createConfig')
+const {
+    createReactOverride,
+} = require('eslint-config-galex/dist/overrides/react')
+const {
+    createTypeScriptOverride,
+} = require('eslint-config-galex/dist/overrides/typescript')
 const { getTsconfig } = require('get-tsconfig')
-const { tryResolve } = require('./helper');
+const { tryResolve } = require('./helper')
 
-const hasReact = tryResolve('react');
+const hasReact = tryResolve('react')
 
 const tsOverrideConfig = {
     react: {
-        hasReact
+        hasReact,
     },
     typescript: {
-        hasTypeScript: true
+        hasTypeScript: true,
     },
     rules: {
-        camelcase: 'warn',
-        'spaced-comment': 'off',
-        'import/order': 'off',
-        'import/no-cycle': 'error',
-        'import/namespace': 'off',
-        'import/no-namespace': 'off',
-        'import/no-deprecated': 'warn',
-        'import/named': 'off',
+        '@typescript-eslint/ban-ts-comment': 'warn',
+        '@typescript-eslint/consistent-type-assertions': 'warn',
+        '@typescript-eslint/consistent-type-definitions': 'off',
+        '@typescript-eslint/dot-notation': 'warn',
+        '@typescript-eslint/explicit-member-accessibility': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/member-ordering': 'warn',
+        '@typescript-eslint/no-confusing-void-expression': 'off',
+        '@typescript-eslint/no-empty-function': 'off',
+        '@typescript-eslint/no-floating-promises': 'error',
+        '@typescript-eslint/no-invalid-void-type': 'warn',
+        '@typescript-eslint/no-misused-promises': [
+            'error',
+            { checksVoidReturn: false },
+        ],
+        '@typescript-eslint/no-namespace': 'error',
+        '@typescript-eslint/no-unnecessary-qualifier': 'warn',
+        '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
+        '@typescript-eslint/no-unused-expressions': 'warn',
+        '@typescript-eslint/no-unused-vars': 'warn',
+        '@typescript-eslint/prefer-enum-initializers': 'off',
+        '@typescript-eslint/prefer-literal-enum-member': 'off',
+        '@typescript-eslint/prefer-nullish-coalescing': 'warn',
+        '@typescript-eslint/prefer-optional-chain': 'off',
+        '@typescript-eslint/restrict-template-expressions': 'warn',
+        '@typescript-eslint/unbound-method': 'error',
+
+        'dot-notation': 'off',
+        'functional/immutable-data': 'off',
+        'functional/prefer-tacit': 'warn',
+
         'import/default': 'off',
+        'import/dynamic-import-chunkname': 'off',
         'import/export': 'off',
-        'import/extensions': 'warn',
-        'import/no-unresolved': 'error',
+        'import/extensions': 'off',
+        'import/named': 'off',
+        'import/namespace': 'off',
+        'import/no-cycle': 'error',
+        'import/no-default-export': 'off',
+        'import/no-deprecated': 'warn',
+        'import/no-extraneous-dependencies': 'off',
+        'import/no-namespace': 'off',
         'import/no-self-import': 'error',
         'import/no-unused-modules': 'off',
-        'import/dynamic-import-chunkname': 'off',
-        'import/no-default-export': 'off',
-        'import/no-extraneous-dependencies': 'off',
-        'simple-import-sort/imports': 'warn',
+        'import/order': 'off',
         'simple-import-sort/exports': 'warn',
+        'simple-import-sort/imports': 'warn',
+
+        'etc/no-const-enum': 'error',
+        'etc/no-enum': 'error',
+        'etc/no-assign-mutated-array': 'error',
+        'etc/prefer-less-than': 'warn',
+        'etc/throw-error': 'warn',
+
+        indent: 'warn',
         'no-bitwise': 'off',
         'no-param-reassign': 'off',
-        'no-unused-vars': 'warn',
         'no-redeclare': 'warn',
-        'no-use-before-define': 'error',
         'no-unsafe-optional-chaining': 'error',
+        'no-unused-vars': 'warn',
+        'no-use-before-define': 'error',
+        'promise/prefer-await-to-then': 'warn',
+        'require-unicode-regexp': 'warn',
+
+        'sonarjs/cognitive-complexity': ['warn', 32],
+        'sonarjs/no-all-duplicated-branches': 'error',
+        'sonarjs/no-collection-size-mischeck': 'error',
+        'sonarjs/no-duplicate-string': 'warn',
+        'sonarjs/no-duplicated-branches': 'error',
+        'sonarjs/no-element-overwrite': 'error',
+        'sonarjs/no-gratuitous-expressions': 'error',
+        'sonarjs/no-identical-conditions': 'error',
+        'sonarjs/no-identical-expressions': ['warn'],
+        'sonarjs/no-identical-functions': 'warn',
+        'sonarjs/no-ignored-return': 'error',
+        'sonarjs/no-use-of-empty-return-value': 'error',
+
+        'spaced-comment': 'off',
+
+        'unicorn/catch-error-name': 'off',
+        'unicorn/consistent-function-scoping': 'warn',
+        'unicorn/no-abusive-eslint-disable': 'warn',
+        'unicorn/no-keyword-prefix': 'off',
+        'unicorn/no-useless-undefined': 'warn',
+        'unicorn/numeric-separators-style': 'off',
+        'unicorn/prefer-dom-node-dataset': 'off',
+        'unicorn/prefer-math-trunc': 'off',
+        'unicorn/prefer-top-level-await': 'off',
+        'unicorn/template-indent': 'warn',
+        camelcase: 'warn',
+
         'no-restricted-syntax': [
             'error',
             {
                 selector: 'MemberExpression[optional=true]',
-                message: 'Optional Chaining not allowed'
-            }
+                message: 'Optional Chaining not allowed',
+            },
+            {
+                selector: 'ClassDeclaration',
+                message: 'Class not allowed',
+            },
+            {
+                selector: 'TSEnumDeclaration',
+                message: 'Enum not allowed',
+            },
         ],
-        'dot-notation': 'off',
-        'promise/prefer-await-to-then': 'off',
-        'require-unicode-regexp': 'warn',
-        'functional/prefer-tacit': 'warn',
-        'functional/immutable-data': 'off',
-        'unicorn/no-useless-undefined': 'warn',
-        'unicorn/prefer-math-trunc': 'off',
-        'unicorn/catch-error-name': 'off',
-        'unicorn/prefer-dom-node-dataset': 'off',
-        'unicorn/consistent-function-scoping': 'warn',
-        'unicorn/no-abusive-eslint-disable': 'warn',
-        'unicorn/template-indent': 'warn',
-        'unicorn/no-keyword-prefix': 'off',
-        'unicorn/numeric-separators-style': 'off',
-        '@typescript-eslint/unbound-method': 'error',
-        '@typescript-eslint/no-invalid-void-type': 'warn',
-        '@typescript-eslint/restrict-template-expressions': 'warn',
-        '@typescript-eslint/prefer-enum-initializers': 'off',
-        '@typescript-eslint/dot-notation': 'off',
-        '@typescript-eslint/no-namespace': 'off',
-        '@typescript-eslint/no-unused-vars': 'off',
-        '@typescript-eslint/member-ordering': 'warn',
-        '@typescript-eslint/ban-ts-comment': 'warn',
-        '@typescript-eslint/no-empty-function': 'off',
-        '@typescript-eslint/no-misused-promises': 'off',
-        '@typescript-eslint/no-floating-promises': 'off',
-        '@typescript-eslint/no-unused-expressions': 'off',
-        '@typescript-eslint/no-unnecessary-qualifier': 'off',
-        '@typescript-eslint/prefer-optional-chain': 'off',
-        '@typescript-eslint/prefer-nullish-coalescing': 'warn',
-        '@typescript-eslint/prefer-literal-enum-member': 'off',
-        '@typescript-eslint/consistent-type-assertions': 'warn',
-        '@typescript-eslint/consistent-type-definitions': 'off',
-        '@typescript-eslint/no-confusing-void-expression': 'off',
-        '@typescript-eslint/explicit-member-accessibility': 'off',
-        '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
-        '@typescript-eslint/explicit-module-boundary-types': 'off',
-
-        'unicorn/prefer-top-level-await': 'off',
-        'sonarjs/no-duplicate-string': 'warn',
-        'sonarjs/no-identical-functions': 'warn',
-        'sonarjs/no-identical-expressions': ['warn'],
-        'sonarjs/cognitive-complexity': ['warn', 32],
-        'sonarjs/no-all-duplicated-branches': 'error',
-        'sonarjs/no-element-overwrite': 'error',
-        'sonarjs/no-collection-size-mischeck': 'error',
-        'sonarjs/no-duplicated-branches': 'error',
-        'sonarjs/no-identical-conditions': 'error',
-        'sonarjs/no-use-of-empty-return-value': 'error',
-        'sonarjs/no-gratuitous-expressions': 'error',
-        'sonarjs/no-ignored-return': 'error'
-    }
-};
+    },
+}
 
 const reactOverrideConfig = {
     react: {
-        hasReact: true
+        hasReact: true,
     },
     typescript: {
-        hasTypeScript: true
+        hasTypeScript: true,
     },
     rules: {
-        'react/jsx-pascal-case': 'off',
-        'react/prop-types': 'off',
-        'react/display-name': 'off',
-        'react/no-namespace': 'off',
-        'react/no-unused-prop-types': 'off',
-        'react/require-default-props': 'off',
-        'react/jsx-key': 'error',
-        'react/jsx-wrap-multilines': 'off',
-        'react/no-array-index-key': 'warn',
-        'react/react-in-jsx-scope': 'off',
-        'react-hooks/rules-of-hooks': 'warn',
         'react-hooks/exhaustive-deps': 'warn',
-        'react/jsx-props-no-spreading': 'off',
-        'react/jsx-indent': 'off',
-        'react/jsx-indent-props': 'off',
+        'react-hooks/rules-of-hooks': 'warn',
+        'react/display-name': 'off',
+        'react/function-component-definition': 'off',
         'react/jsx-handler-names': 'off',
+        'react/jsx-indent-props': 'off',
+        'react/jsx-indent': 'off',
+        'react/jsx-key': 'error',
         'react/jsx-no-useless-fragment': 'off',
         'react/jsx-one-expression-per-line': 'off',
-        'react/function-component-definition': 'off',
+        'react/jsx-pascal-case': 'off',
+        'react/jsx-props-no-spreading': 'off',
+        'react/jsx-wrap-multilines': 'off',
+        'react/no-array-index-key': 'warn',
         'react/no-invalid-html-attribute': 'off',
-        'jsx-a11y/no-autofocus': 'off',
+        'react/no-namespace': 'off',
+        'react/no-unused-prop-types': 'off',
+        'react/prop-types': 'off',
+        'react/react-in-jsx-scope': 'off',
+        'react/require-default-props': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
-        'jsx-a11y/no-static-element-interactions': 'off',
-        'jsx-a11y/interactive-supports-focus': 'off',
         'jsx-a11y/control-has-associated-label': 'off',
-        'jsx-a11y/no-noninteractive-element-interactions': 'off'
-    }
-};
+        'jsx-a11y/interactive-supports-focus': 'off',
+        'jsx-a11y/no-autofocus': 'off',
+        'jsx-a11y/no-noninteractive-element-interactions': 'off',
+        'jsx-a11y/no-static-element-interactions': 'off',
+    },
+}
 
-const tsOverride = createTypeScriptOverride(tsOverrideConfig);
+const tsOverride = createTypeScriptOverride(tsOverrideConfig)
 
-const reactOverride = createReactOverride(reactOverrideConfig);
+const reactOverride = createReactOverride(reactOverrideConfig)
 
 const finalConfig = createConfig({
     env: {
         browser: true,
-        es2021: true
+        es2021: true,
     },
     extends: [
-        'prettier',
         'plugin:import/recommended',
         'plugin:sonarjs/recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:functional/strict',
         'plugin:functional/stylistic',
         'plugin:functional/external-recommended',
-        'plugin:functional/external-typescript-recommended'
+        'plugin:functional/external-typescript-recommended',
     ].filter(Boolean),
     plugins: ['simple-import-sort', 'functional'].filter(Boolean),
     incrementalAdoption: false,
@@ -162,11 +188,11 @@ const finalConfig = createConfig({
         'import/resolver': {
             typescript: {
                 alwaysTryTypes: true,
-                project: getTsconfig()?.path ?? 'tsconfig.json'
-            }
-        }
+                project: getTsconfig()?.path ?? 'tsconfig.json',
+            },
+        },
     },
-    overrides: [tsOverride, hasReact && reactOverride].filter(Boolean)
-});
+    overrides: [tsOverride, hasReact && reactOverride].filter(Boolean),
+})
 
-module.exports = finalConfig;
+module.exports = finalConfig
