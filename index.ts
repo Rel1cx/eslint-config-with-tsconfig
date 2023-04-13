@@ -86,6 +86,7 @@ const tsOverrideConfig = createTypeScriptOverride({
         '@typescript-eslint/restrict-template-expressions': 'warn',
         '@typescript-eslint/unbound-method': 'error',
 
+        strict: 'off',
         'dot-notation': 'off',
         'functional/prefer-tacit': 'warn',
         'functional/functional-parameters': 'off',
@@ -104,7 +105,7 @@ const tsOverrideConfig = createTypeScriptOverride({
         'import/namespace': 'off',
         'import/no-cycle': 'error',
         'import/no-default-export': 'off',
-        'import/no-deprecated': 'warn',
+        'import/no-deprecated': 'off',
         'import/no-extraneous-dependencies': 'off',
         'import/no-namespace': 'off',
         'import/no-self-import': 'error',
