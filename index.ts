@@ -1,23 +1,55 @@
-const { isPackageExists } = require('local-pkg')
-const { createConfig } = require('eslint-config-galex/dist/createConfig')
-const {
-    createReactOverride,
-} = require('eslint-config-galex/dist/overrides/react')
-const {
-    createTypeScriptOverride,
-} = require('eslint-config-galex/dist/overrides/typescript')
-const { getTsconfig } = require('get-tsconfig')
-const confusingBrowserGlobals = require('confusing-browser-globals')
 
-const hasReact = isPackageExists('react')
+import confusingBrowserGlobals from 'confusing-browser-globals'
+import { createConfig } from 'eslint-config-galex/dist/createConfig'
+import { createReactOverride } from 'eslint-config-galex/dist/overrides/react'
+import { createTypeScriptOverride } from 'eslint-config-galex/dist/overrides/typescript'
+import { type OverrideCreator } from 'eslint-config-galex/dist/types'
+import { getTsconfig } from 'get-tsconfig'
+import { getPackageInfoSync, isPackageExists } from 'local-pkg'
 
-const tsOverrideConfig = {
+const reactPkgInfo = getPackageInfoSync('react')
+const tsPkgInfo = getPackageInfoSync('typescript')
+
+const defaultProject: Parameters<OverrideCreator>[0] = {
+    hasJest: isPackageExists('jest'),
+    hasJestDom: isPackageExists('@testing-library/jest-dom'),
+    hasNest: isPackageExists('@nestjs/common'),
+    hasNodeTypes: isPackageExists('@types/node'),
+    hasTestingLibrary: isPackageExists('@testing-library/react'),
+    hasTailwind: isPackageExists('tailwindcss'),
     react: {
-        hasReact,
+        hasReact: isPackageExists('react'),
+        isCreateReactApp: false,
+        isNext: isPackageExists('next'),
+        isPreact: isPackageExists('preact'),
+        isRemix: isPackageExists('remix'),
+        // eslint-disable-next-line no-restricted-syntax
+        version: reactPkgInfo?.version ?? null,
+    },
+    storybook: {
+        hasStorybook: false,
+        hasStorybookTestingLibrary: false,
     },
     typescript: {
+        config: null,
         hasTypeScript: true,
+        // eslint-disable-next-line no-restricted-syntax
+        version: tsPkgInfo?.version ?? null,
     },
+};
+
+const tsOverrideConfig = createTypeScriptOverride({
+    ...defaultProject,
+    extends: [
+        'plugin:import/recommended',
+        'plugin:sonarjs/recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:functional/recommended',
+        'plugin:functional/stylistic',
+        'plugin:functional/external-typescript-recommended',
+        'plugin:typescript-sort-keys/recommended'
+    ],
     rules: {
         '@typescript-eslint/ban-ts-comment': 'warn',
         '@typescript-eslint/consistent-type-assertions': 'warn',
@@ -55,8 +87,14 @@ const tsOverrideConfig = {
         '@typescript-eslint/unbound-method': 'error',
 
         'dot-notation': 'off',
-        'functional/immutable-data': 'off',
         'functional/prefer-tacit': 'warn',
+        'functional/functional-parameters': 'off',
+        'functional/immutable-data': 'off',
+        'functional/no-conditional-statements': 'off',
+        'functional/no-expression-statements': 'off',
+        'functional/no-return-void': 'off',
+        'functional/prefer-immutable-types': 'off',
+        'functional/type-declaration-immutability': 'off',
 
         'import/default': 'off',
         'import/dynamic-import-chunkname': 'off',
@@ -147,15 +185,10 @@ const tsOverrideConfig = {
             },
         ],
     },
-}
+})
 
-const reactOverrideConfig = {
-    react: {
-        hasReact: true,
-    },
-    typescript: {
-        hasTypeScript: true,
-    },
+const reactOverrideConfig = createReactOverride({
+    ...defaultProject,
     rules: {
         'react-hooks/exhaustive-deps': 'warn',
         'react-hooks/rules-of-hooks': 'warn',
@@ -185,28 +218,13 @@ const reactOverrideConfig = {
         'jsx-a11y/no-noninteractive-element-interactions': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
     },
-}
+})
 
-const tsOverride = createTypeScriptOverride(tsOverrideConfig)
-
-const reactOverride = createReactOverride(reactOverrideConfig)
-
-const finalConfig = createConfig({
+export default createConfig({
     env: {
         browser: true,
         es2021: true,
     },
-    extends: [
-        'plugin:import/recommended',
-        'plugin:sonarjs/recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
-        'plugin:functional/strict',
-        'plugin:functional/stylistic',
-        'plugin:functional/external-recommended',
-        'plugin:functional/external-typescript-recommended',
-        'plugin:typescript-sort-keys/recommended',
-    ].filter(Boolean),
     plugins: [
         'simple-import-sort',
         'sort-destructure-keys',
@@ -214,15 +232,17 @@ const finalConfig = createConfig({
         'functional',
     ].filter(Boolean),
     incrementalAdoption: false,
+    overrides: [
+        tsOverrideConfig,
+        reactOverrideConfig,
+    ],
     settings: {
         'import/resolver': {
             typescript: {
                 alwaysTryTypes: true,
+                // eslint-disable-next-line no-restricted-syntax
                 project: getTsconfig()?.path ?? 'tsconfig.json',
             },
         },
     },
-    overrides: [tsOverride, hasReact && reactOverride].filter(Boolean),
 })
-
-module.exports = finalConfig
