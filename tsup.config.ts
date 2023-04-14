@@ -1,19 +1,18 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig(_ => ({
-    name: 'core',
     platform: 'node',
+    entry: ['./index.ts'],
+    outDir: 'lib',
     target: 'es2021',
     format: ['cjs'],
-    entry: ['./index.ts'],
-    outDir: 'dist',
+    treeshake: true,
+    sourcemap: true,
     dts: true,
-    shims: false,
     minify: false,
     splitting: false,
-    sourcemap: true,
-    clean: true,
-    ignoreWatch: ['dist'],
     replaceNodeEnv: false,
-    treeshake: true
+    shims: false,
+    ignoreWatch: ['lib'],
+    clean: true
 }))
