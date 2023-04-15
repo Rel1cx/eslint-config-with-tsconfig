@@ -2,9 +2,9 @@ import { defineConfig } from 'tsup'
 
 export default defineConfig(_ => ({
     platform: 'node',
+    target: 'node18',
     entry: ['./index.ts'],
     outDir: 'lib',
-    target: 'es2021',
     format: ['cjs'],
     treeshake: true,
     sourcemap: true,
