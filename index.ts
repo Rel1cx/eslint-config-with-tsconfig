@@ -62,6 +62,12 @@ const tsOverrideConfig = createTypeScriptOverride({
         '@typescript-eslint/no-empty-function': 'off',
         '@typescript-eslint/no-floating-promises': 'error',
         '@typescript-eslint/no-invalid-void-type': 'warn',
+        '@typescript-eslint/no-unnecessary-condition': 'error',
+        '@typescript-eslint/no-unsafe-assignment': 'error',
+        '@typescript-eslint/no-unsafe-call': 'error',
+        '@typescript-eslint/no-unsafe-member-access': 'error',
+        '@typescript-eslint/no-unsafe-return': 'error',
+        '@typescript-eslint/strict-boolean-expressions': 'error',
         '@typescript-eslint/no-misused-promises': [
             'error',
             { checksVoidReturn: false },
