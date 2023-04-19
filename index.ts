@@ -1,4 +1,3 @@
-
 import confusingBrowserGlobals from 'confusing-browser-globals'
 import { createConfig } from 'eslint-config-galex/dist/createConfig'
 import { createReactOverride } from 'eslint-config-galex/dist/overrides/react'
@@ -36,7 +35,7 @@ const defaultProject: Parameters<OverrideCreator>[0] = {
         // eslint-disable-next-line no-restricted-syntax
         version: tsPkgInfo?.version ?? null,
     },
-};
+}
 
 const tsOverrideConfig = createTypeScriptOverride({
     ...defaultProject,
@@ -48,7 +47,7 @@ const tsOverrideConfig = createTypeScriptOverride({
         'plugin:functional/recommended',
         'plugin:functional/stylistic',
         'plugin:functional/external-typescript-recommended',
-        'plugin:security/recommended'
+        'plugin:security/recommended',
     ],
     rules: {
         '@typescript-eslint/ban-ts-comment': 'warn',
@@ -67,7 +66,7 @@ const tsOverrideConfig = createTypeScriptOverride({
         '@typescript-eslint/no-unsafe-call': 'error',
         '@typescript-eslint/no-unsafe-member-access': 'error',
         '@typescript-eslint/no-unsafe-return': 'error',
-        '@typescript-eslint/strict-boolean-expressions': 'error',
+        '@typescript-eslint/strict-boolean-expressions': 'off',
         '@typescript-eslint/no-misused-promises': [
             'error',
             { checksVoidReturn: false },
@@ -236,15 +235,8 @@ export default createConfig({
         es2021: true,
     },
     incrementalAdoption: false,
-    overrides: [
-        tsOverrideConfig,
-        reactOverrideConfig,
-    ],
-    plugins: [
-        'simple-import-sort',
-        'sort',
-        'functional',
-    ].filter(Boolean),
+    overrides: [tsOverrideConfig, reactOverrideConfig],
+    plugins: ['simple-import-sort', 'sort', 'functional'].filter(Boolean),
     settings: {
         'import/resolver': {
             typescript: {
