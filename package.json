@@ -40,7 +40,7 @@
     "devDependencies": {
         "@types/eslint": "8.37.0",
         "@types/confusing-browser-globals": "1.0.0",
-        "eslint": "8.38.0",
+        "eslint": "8.39.0",
         "publint": "0.1.11",
         "tsup": "6.7.0",
         "tsx": "3.12.6",
