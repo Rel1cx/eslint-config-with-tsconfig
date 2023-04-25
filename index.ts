@@ -10,8 +10,8 @@ const reactPkgInfo = getPackageInfoSync('react')
 const tsPkgInfo = getPackageInfoSync('typescript')
 
 const defaultProject: Parameters<OverrideCreator>[0] = {
-    hasJest: isPackageExists('jest'),
-    hasJestDom: isPackageExists('@testing-library/jest-dom'),
+    hasJest: false,
+    hasJestDom: false,
     hasNest: isPackageExists('@nestjs/common'),
     hasNodeTypes: isPackageExists('@types/node'),
     hasTailwind: isPackageExists('tailwindcss'),
@@ -21,7 +21,7 @@ const defaultProject: Parameters<OverrideCreator>[0] = {
         isCreateReactApp: false,
         isNext: isPackageExists('next'),
         isPreact: isPackageExists('preact'),
-        isRemix: isPackageExists('remix'),
+        isRemix: false,
         // eslint-disable-next-line no-restricted-syntax
         version: reactPkgInfo?.version ?? null,
     },
