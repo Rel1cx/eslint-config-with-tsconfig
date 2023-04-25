@@ -185,9 +185,6 @@ const tsOverrideConfig = createTypeScriptOverride({
         'unicorn/template-indent': 'warn',
 
         'security/detect-object-injection': 'off',
-
-        'filenames/match-exported': 2,
-        // 'filenames/no-index': 2,
     },
 })
 
@@ -231,7 +228,7 @@ export default createConfig({
     },
     incrementalAdoption: false,
     overrides: [tsOverrideConfig, reactOverrideConfig],
-    plugins: ['simple-import-sort', 'functional', 'filenames', 'sort'],
+    plugins: ['simple-import-sort', 'functional', 'sort'],
     settings: {
         'import/resolver': {
             typescript: {
