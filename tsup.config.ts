@@ -1,6 +1,6 @@
 import { defineConfig } from 'tsup'
 
-export default defineConfig(_ => ({
+export default defineConfig((_) => ({
     platform: 'node',
     target: 'node18',
     entry: ['./index.ts'],
@@ -14,5 +14,5 @@ export default defineConfig(_ => ({
     replaceNodeEnv: false,
     shims: false,
     ignoreWatch: ['lib'],
-    clean: true
+    clean: true,
 }))

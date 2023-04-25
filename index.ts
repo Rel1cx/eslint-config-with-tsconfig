@@ -100,7 +100,6 @@ const tsOverrideConfig = createTypeScriptOverride({
         'func-style': ['error', 'expression'],
         'functional/functional-parameters': 'off',
         'functional/immutable-data': 'off',
-
         'functional/no-conditional-statements': 'off',
         'functional/no-expression-statements': 'off',
         'functional/no-return-void': 'off',
@@ -117,10 +116,8 @@ const tsOverrideConfig = createTypeScriptOverride({
         'import/no-default-export': 'off',
         'import/no-deprecated': 'off',
         'import/no-extraneous-dependencies': 'off',
-
         'import/no-namespace': 'off',
         'import/no-self-import': 'error',
-
         'import/no-unused-modules': 'off',
         'import/order': 'off',
         indent: 'warn',
@@ -143,10 +140,6 @@ const tsOverrideConfig = createTypeScriptOverride({
             {
                 message: 'Optional Chaining not allowed',
                 selector: 'MemberExpression[optional=true]',
-            },
-            {
-                message: 'Class not allowed',
-                selector: 'ClassDeclaration',
             },
             {
                 message: 'Enum not allowed',
@@ -179,7 +172,7 @@ const tsOverrideConfig = createTypeScriptOverride({
         'sort/destructuring-properties': 'warn',
 
         'spaced-comment': 'off',
-        strict: 'off',
+        strict: 'error',
         'unicorn/catch-error-name': 'off',
         'unicorn/consistent-function-scoping': 'warn',
         'unicorn/no-abusive-eslint-disable': 'warn',
@@ -188,11 +181,13 @@ const tsOverrideConfig = createTypeScriptOverride({
         'unicorn/numeric-separators-style': 'off',
         'unicorn/prefer-dom-node-dataset': 'off',
         'unicorn/prefer-math-trunc': 'off',
-
         'unicorn/prefer-top-level-await': 'off',
         'unicorn/template-indent': 'warn',
 
         'security/detect-object-injection': 'off',
+
+        'filenames/match-exported': 2,
+        // 'filenames/no-index': 2,
     },
 })
 
@@ -236,7 +231,7 @@ export default createConfig({
     },
     incrementalAdoption: false,
     overrides: [tsOverrideConfig, reactOverrideConfig],
-    plugins: ['simple-import-sort', 'sort', 'functional'].filter(Boolean),
+    plugins: ['simple-import-sort', 'functional', 'filenames', 'sort'],
     settings: {
         'import/resolver': {
             typescript: {
