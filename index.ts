@@ -173,6 +173,8 @@ const tsOverrideConfig = createTypeScriptOverride({
 
         'spaced-comment': 'off',
         strict: 'error',
+        'array-callback-return': 'off',
+        'unicorn/no-array-method-this-argument': 'off',
         'unicorn/catch-error-name': 'off',
         'unicorn/consistent-function-scoping': 'warn',
         'unicorn/no-abusive-eslint-disable': 'warn',
