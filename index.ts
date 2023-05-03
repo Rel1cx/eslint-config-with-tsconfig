@@ -95,7 +95,7 @@ const tsOverrideConfig = createTypeScriptOverride({
         'etc/no-assign-mutated-array': 'error',
         'etc/no-const-enum': 'error',
         'etc/no-enum': 'error',
-        'etc/prefer-less-than': 'warn',
+        'etc/prefer-less-than': 'off',
         'etc/throw-error': 'warn',
         'func-style': ['error', 'expression'],
         'functional/functional-parameters': 'off',
