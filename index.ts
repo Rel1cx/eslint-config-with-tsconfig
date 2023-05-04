@@ -103,6 +103,7 @@ const tsOverrideConfig = createTypeScriptOverride({
         'functional/no-conditional-statements': 'off',
         'functional/no-expression-statements': 'off',
         'functional/no-return-void': 'off',
+        'functional/no-loop-statements': 'off',
         'functional/prefer-immutable-types': 'off',
         'functional/prefer-tacit': 'warn',
         'functional/type-declaration-immutability': 'off',

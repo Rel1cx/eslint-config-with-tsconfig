@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "1.4.2",
+    "version": "1.4.3",
     "description": "Mikufied's frontend config",
     "exports": {
         ".": {
@@ -17,6 +17,7 @@
     ],
     "scripts": {
         "build": "tsup",
+        "clean": "rm -rf lib",
         "dev": "tsup --watch",
         "lint": "eslint .",
         "prepublish": "publint && pnpm build"
@@ -39,7 +40,6 @@
         "@types/eslint": "8.37.0",
         "eslint": "8.39.0",
         "publint": "0.1.11",
-        "tsup": "6.7.0",
         "type-fest": "3.10.0",
         "typescript": "5.0.4"
     },
