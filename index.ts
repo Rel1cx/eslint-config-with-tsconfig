@@ -40,6 +40,7 @@ const defaultProject: Parameters<OverrideCreator>[0] = {
 const tsOverrideConfig = createTypeScriptOverride({
     ...defaultProject,
     extends: [
+        'plugin:case-police/recommended',
         'plugin:import/recommended',
         'plugin:sonarjs/recommended',
         'plugin:@typescript-eslint/recommended',
