@@ -40,7 +40,7 @@ const defaultProject: Parameters<OverrideCreator>[0] = {
 const tsOverrideConfig = createTypeScriptOverride({
     ...defaultProject,
     extends: [
-        'plugin:case-police/recommended',
+        'plugin:regexp/recommended',
         'plugin:import/recommended',
         'plugin:sonarjs/recommended',
         'plugin:@typescript-eslint/recommended',
@@ -49,6 +49,8 @@ const tsOverrideConfig = createTypeScriptOverride({
         'plugin:functional/stylistic',
         'plugin:functional/external-typescript-recommended',
         'plugin:security/recommended',
+        'plugin:ecmascript-compat/recommended',
+        'plugin:case-police/recommended',
     ],
     rules: {
         '@typescript-eslint/ban-ts-comment': 'warn',
@@ -189,6 +191,10 @@ const tsOverrideConfig = createTypeScriptOverride({
         'unicorn/template-indent': 'warn',
 
         'security/detect-object-injection': 'off',
+        'deprecation/deprecation': 'warn',
+
+        'ecmascript-compat/compat': ['warn'],
+        'write-good-comments/write-good-comments': 'warn',
     },
 })
 
@@ -232,7 +238,15 @@ export default createConfig({
     },
     incrementalAdoption: false,
     overrides: [tsOverrideConfig, reactOverrideConfig],
-    plugins: ['simple-import-sort', 'functional', 'sort'],
+    plugins: [
+        'regexp',
+        'ecmascript-compat',
+        'simple-import-sort',
+        'functional',
+        'deprecation',
+        'sort',
+        'write-good-comments',
+    ],
     settings: {
         'import/resolver': {
             typescript: {

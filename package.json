@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "1.4.4",
+    "version": "1.4.5",
     "description": "Mikufied's frontend config",
     "exports": {
         ".": {
@@ -19,7 +19,7 @@
         "build": "tsup",
         "clean": "rm -rf lib",
         "dev": "tsup --watch",
-        "lint": "eslint .",
+        "lint": "eslint --color .",
         "prepublish": "publint && pnpm build"
     },
     "dependencies": {
@@ -28,11 +28,16 @@
         "eslint-config-galex": "^4.5.2",
         "eslint-import-resolver-typescript": "^3.5.5",
         "eslint-plugin-case-police": "^0.6.0",
+        "eslint-plugin-deprecation": "^1.4.1",
+        "eslint-plugin-ecmascript-compat": "^3.0.0",
         "eslint-plugin-functional": "^5.0.8",
+        "eslint-plugin-github": "^4.7.0",
         "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-regexp": "^1.14.0",
         "eslint-plugin-security": "^1.7.1",
         "eslint-plugin-simple-import-sort": "^10.0.0",
         "eslint-plugin-sort": "^2.10.0",
+        "eslint-plugin-write-good-comments": "^0.2.0",
         "get-tsconfig": "^4.5.0",
         "local-pkg": "^0.4.3"
     },

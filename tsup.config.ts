@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsup'
+import { defineConfig } from 'tsup';
 
 export default defineConfig(() => ({
     platform: 'node',
@@ -15,4 +15,4 @@ export default defineConfig(() => ({
     replaceNodeEnv: false,
     shims: false,
     clean: true,
-}))
+}));
