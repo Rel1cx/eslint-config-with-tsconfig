@@ -4,6 +4,9 @@
         "lib": [
             "ESNext"
         ],
+        "types": [
+            "node"
+        ],
         "target": "ES2021",
         "module": "CommonJS",
         "noEmit": true,

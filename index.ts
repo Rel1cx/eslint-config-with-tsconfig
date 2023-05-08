@@ -2,40 +2,11 @@ import confusingBrowserGlobals from 'confusing-browser-globals'
 import { createConfig } from 'eslint-config-galex/dist/createConfig'
 import { createReactOverride } from 'eslint-config-galex/dist/overrides/react'
 import { createTypeScriptOverride } from 'eslint-config-galex/dist/overrides/typescript'
-import { type OverrideCreator } from 'eslint-config-galex/dist/types'
 import { getTsconfig } from 'get-tsconfig'
-import { getPackageInfoSync, isPackageExists } from 'local-pkg'
 
-const reactPkgInfo = getPackageInfoSync('react')
-const tsPkgInfo = getPackageInfoSync('typescript')
+import { resolveProject } from './helper'
 
-const defaultProject: Parameters<OverrideCreator>[0] = {
-    hasJest: false,
-    hasJestDom: false,
-    hasNest: isPackageExists('@nestjs/common'),
-    hasNodeTypes: isPackageExists('@types/node'),
-    hasTailwind: isPackageExists('tailwindcss'),
-    hasTestingLibrary: isPackageExists('@testing-library/react'),
-    react: {
-        hasReact: isPackageExists('react'),
-        isCreateReactApp: false,
-        isNext: isPackageExists('next'),
-        isPreact: isPackageExists('preact'),
-        isRemix: false,
-        // eslint-disable-next-line no-restricted-syntax
-        version: reactPkgInfo?.version ?? null,
-    },
-    storybook: {
-        hasStorybook: false,
-        hasStorybookTestingLibrary: false,
-    },
-    typescript: {
-        config: null,
-        hasTypeScript: true,
-        // eslint-disable-next-line no-restricted-syntax
-        version: tsPkgInfo?.version ?? null,
-    },
-}
+const defaultProject = resolveProject()
 
 const tsOverrideConfig = createTypeScriptOverride({
     ...defaultProject,
@@ -49,7 +20,6 @@ const tsOverrideConfig = createTypeScriptOverride({
         'plugin:functional/stylistic',
         'plugin:functional/external-typescript-recommended',
         'plugin:security/recommended',
-        'plugin:ecmascript-compat/recommended',
         'plugin:case-police/recommended',
     ],
     rules: {
@@ -79,7 +49,7 @@ const tsOverrideConfig = createTypeScriptOverride({
         '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
         '@typescript-eslint/no-unused-expressions': 'warn',
         '@typescript-eslint/no-unused-vars': [
-            'error',
+            'warn',
             {
                 // Allow to name unused vars with _
                 argsIgnorePattern: '^_',
@@ -192,8 +162,6 @@ const tsOverrideConfig = createTypeScriptOverride({
 
         'security/detect-object-injection': 'off',
         'deprecation/deprecation': 'warn',
-
-        'ecmascript-compat/compat': ['warn'],
         'write-good-comments/write-good-comments': 'warn',
     },
 })
@@ -240,7 +208,6 @@ export default createConfig({
     overrides: [tsOverrideConfig, reactOverrideConfig],
     plugins: [
         'regexp',
-        'ecmascript-compat',
         'simple-import-sort',
         'functional',
         'deprecation',
