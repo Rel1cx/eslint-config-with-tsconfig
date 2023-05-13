@@ -1,12 +1,12 @@
-import confusingBrowserGlobals from 'confusing-browser-globals'
-import { createConfig } from 'eslint-config-galex/dist/createConfig'
-import { createReactOverride } from 'eslint-config-galex/dist/overrides/react'
-import { createTypeScriptOverride } from 'eslint-config-galex/dist/overrides/typescript'
-import { getTsconfig } from 'get-tsconfig'
+import confusingBrowserGlobals from 'confusing-browser-globals';
+import { createConfig } from 'eslint-config-galex/dist/createConfig';
+import { createReactOverride } from 'eslint-config-galex/dist/overrides/react';
+import { createTypeScriptOverride } from 'eslint-config-galex/dist/overrides/typescript';
+import { getTsconfig } from 'get-tsconfig';
 
-import { resolveProject } from './helper'
+import { resolveProject } from './helper';
 
-const defaultProject = resolveProject()
+const defaultProject = resolveProject();
 
 const tsOverrideConfig = createTypeScriptOverride({
     ...defaultProject,
@@ -40,10 +40,7 @@ const tsOverrideConfig = createTypeScriptOverride({
         '@typescript-eslint/no-unsafe-member-access': 'error',
         '@typescript-eslint/no-unsafe-return': 'error',
         '@typescript-eslint/strict-boolean-expressions': 'off',
-        '@typescript-eslint/no-misused-promises': [
-            'error',
-            { checksVoidReturn: false },
-        ],
+        '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: false }],
         '@typescript-eslint/no-namespace': 'error',
         '@typescript-eslint/no-unnecessary-qualifier': 'warn',
         '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
@@ -70,16 +67,20 @@ const tsOverrideConfig = createTypeScriptOverride({
         'etc/no-enum': 'error',
         'etc/prefer-less-than': 'off',
         'etc/throw-error': 'warn',
-        'func-style': ['error', 'expression'],
+        'func-style': ['warn', 'expression'],
+
         'functional/functional-parameters': 'off',
         'functional/immutable-data': 'off',
         'functional/no-conditional-statements': 'off',
         'functional/no-expression-statements': 'off',
+        'functional/no-classes': 'off',
+        'functional/no-mixed-types': 'off',
         'functional/no-return-void': 'off',
         'functional/no-loop-statements': 'off',
         'functional/prefer-immutable-types': 'off',
         'functional/prefer-tacit': 'warn',
         'functional/type-declaration-immutability': 'off',
+
         'import/default': 'off',
         'import/dynamic-import-chunkname': 'off',
         'import/export': 'off',
@@ -94,6 +95,8 @@ const tsOverrideConfig = createTypeScriptOverride({
         'import/no-self-import': 'error',
         'import/no-unused-modules': 'off',
         'import/order': 'off',
+        'import/consistent-type-specifier-style': 'off',
+
         indent: 'warn',
         'max-len': [
             'error',
@@ -102,27 +105,17 @@ const tsOverrideConfig = createTypeScriptOverride({
             },
         ],
         'no-bitwise': 'off',
-
         'no-else-return': 'error',
         'no-lonely-if': 'error',
         'no-multiple-empty-lines': ['error', { max: 2, maxBOF: 1 }],
         'no-param-reassign': 'off',
         'no-redeclare': 'warn',
         'no-restricted-globals': ['error', ...confusingBrowserGlobals],
-        'no-restricted-syntax': [
-            'error',
-            {
-                message: 'Optional Chaining not allowed',
-                selector: 'MemberExpression[optional=true]',
-            },
-            {
-                message: 'Enum not allowed',
-                selector: 'TSEnumDeclaration',
-            },
-        ],
         'no-unsafe-optional-chaining': 'error',
         'no-unused-vars': 'warn',
         'no-use-before-define': 'error',
+        'prefer-object-spread': 'off',
+        '@typescript-eslint/no-useless-empty-export': 'off',
         'promise/prefer-await-to-then': 'warn',
         'quote-props': ['error', 'as-needed'],
         quotes: ['error', 'single', { allowTemplateLiterals: true }],
@@ -143,8 +136,6 @@ const tsOverrideConfig = createTypeScriptOverride({
         'sonarjs/no-ignored-return': 'error',
         'sonarjs/no-use-of-empty-return-value': 'error',
 
-        'sort/destructuring-properties': 'warn',
-
         'spaced-comment': 'off',
         strict: 'error',
         'array-callback-return': 'off',
@@ -162,9 +153,10 @@ const tsOverrideConfig = createTypeScriptOverride({
 
         'security/detect-object-injection': 'off',
         'deprecation/deprecation': 'warn',
+        'sort/destructuring-properties': 'warn',
         'write-good-comments/write-good-comments': 'warn',
     },
-})
+});
 
 const reactOverrideConfig = createReactOverride({
     ...defaultProject,
@@ -185,7 +177,7 @@ const reactOverrideConfig = createReactOverride({
         'react/jsx-one-expression-per-line': 'off',
         'react/jsx-pascal-case': 'off',
         'react/jsx-props-no-spreading': 'off',
-        'react/jsx-sort-props': 'warn',
+        'react/jsx-sort-props': 'off',
         'react/jsx-wrap-multilines': 'off',
         'react/no-array-index-key': 'warn',
         'react/no-invalid-html-attribute': 'off',
@@ -197,7 +189,7 @@ const reactOverrideConfig = createReactOverride({
         'react-hooks/exhaustive-deps': 'warn',
         'react-hooks/rules-of-hooks': 'warn',
     },
-})
+});
 
 export default createConfig({
     env: {
@@ -206,21 +198,13 @@ export default createConfig({
     },
     incrementalAdoption: false,
     overrides: [tsOverrideConfig, reactOverrideConfig],
-    plugins: [
-        'regexp',
-        'simple-import-sort',
-        'functional',
-        'deprecation',
-        'sort',
-        'write-good-comments',
-    ],
+    plugins: ['regexp', 'simple-import-sort', 'functional', 'deprecation', 'sort', 'write-good-comments'],
     settings: {
         'import/resolver': {
             typescript: {
                 alwaysTryTypes: true,
-                // eslint-disable-next-line no-restricted-syntax
                 project: getTsconfig()?.path ?? 'tsconfig.json',
             },
         },
     },
-})
+});
