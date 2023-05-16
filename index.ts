@@ -154,7 +154,6 @@ const tsOverrideConfig = createTypeScriptOverride({
         "security/detect-object-injection": "off",
         "deprecation/deprecation": "warn",
         "sort/destructuring-properties": "warn",
-        "write-good-comments/write-good-comments": "warn",
     },
 })
 
@@ -198,7 +197,7 @@ export default createConfig({
     },
     incrementalAdoption: false,
     overrides: [tsOverrideConfig, reactOverrideConfig],
-    plugins: ["regexp", "simple-import-sort", "functional", "deprecation", "sort", "write-good-comments"],
+    plugins: ["regexp", "simple-import-sort", "functional", "deprecation", "sort"],
     settings: {
         "import/resolver": {
             typescript: {
