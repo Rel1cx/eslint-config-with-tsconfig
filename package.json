@@ -15,20 +15,17 @@
     },
     "main": "./lib/index.js",
     "types": "./lib/index.d.ts",
-    "files": [
-        "lib",
-        "tsconfig.base.json"
-    ],
+    "files": ["lib", "tsconfig.base.json"],
     "scripts": {
         "build": "tsup",
         "clean": "rm -rf lib",
         "dev": "tsup --watch",
-        "format": "dprint fmt",
+        "format": "rome format . --write",
         "lint": "eslint --color . --ext .ts --fix",
         "prepublish": "publint && pnpm build"
     },
     "dependencies": {
-        "@typescript-eslint/type-utils": "^5.59.5",
+        "@typescript-eslint/type-utils": "^5.59.6",
         "confusing-browser-globals": "^1.0.11",
         "eslint-config-galex": "^4.5.2",
         "eslint-define-config": "^1.20.0",
@@ -49,10 +46,10 @@
     "devDependencies": {
         "@types/confusing-browser-globals": "1.0.0",
         "@types/eslint": "8.37.0",
-        "@types/node": "20.1.3",
-        "dprint": "0.36.1",
+        "@types/node": "20.1.5",
         "eslint": "8.40.0",
         "publint": "0.1.11",
+        "rome": "12.1.0",
         "tsup": "6.7.0",
         "type-fest": "3.10.0",
         "typescript": "5.0.4"

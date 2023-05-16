@@ -1,12 +1,12 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from "tsup"
 
 export default defineConfig(() => ({
-    platform: 'node',
-    target: 'node18',
-    format: ['cjs'],
-    entry: ['./index.ts', './helper.ts'],
-    outDir: 'lib',
-    ignoreWatch: ['lib'],
+    platform: "node",
+    target: "node18",
+    format: ["cjs"],
+    entry: ["./index.ts", "./helper.ts"],
+    outDir: "lib",
+    ignoreWatch: ["lib"],
     treeshake: true,
     sourcemap: true,
     dts: true,
@@ -15,4 +15,4 @@ export default defineConfig(() => ({
     replaceNodeEnv: false,
     shims: false,
     clean: true,
-}));
+}))
