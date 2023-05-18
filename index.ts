@@ -154,6 +154,14 @@ const tsOverrideConfig = createTypeScriptOverride({
         "security/detect-object-injection": "off",
         "deprecation/deprecation": "warn",
         "sort/destructuring-properties": "warn",
+
+        "no-restricted-syntax": [
+            "error",
+            {
+                selector: "ClassBody > MethodDefinition[kind='constructor'][accessibility!='private']",
+                message: "Prefer private constructor",
+            },
+        ],
     },
 })
 

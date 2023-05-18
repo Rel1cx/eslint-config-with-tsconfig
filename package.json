@@ -1,7 +1,7 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "1.4.8",
-    "description": "Mikufied's frontend config",
+    "version": "1.4.9",
+    "description": "Mikufied's ESLint config",
     "exports": {
         ".": {
             "types": "./lib/index.d.ts",
@@ -15,7 +15,10 @@
     },
     "main": "./lib/index.js",
     "types": "./lib/index.d.ts",
-    "files": ["lib", "tsconfig.base.json"],
+    "files": [
+        "lib",
+        "tsconfig.base.json"
+    ],
     "scripts": {
         "build": "tsup",
         "clean": "rm -rf lib",
@@ -27,6 +30,7 @@
     "dependencies": {
         "@typescript-eslint/type-utils": "^5.59.6",
         "confusing-browser-globals": "^1.0.11",
+        "consola": "3.1.0",
         "eslint-config-galex": "^4.5.2",
         "eslint-define-config": "^1.20.0",
         "eslint-import-resolver-typescript": "^3.5.5",
@@ -45,10 +49,10 @@
     "devDependencies": {
         "@types/confusing-browser-globals": "1.0.0",
         "@types/eslint": "8.37.0",
-        "@types/node": "20.1.5",
+        "@types/node": "20.2.0",
         "eslint": "8.40.0",
         "publint": "0.1.11",
-        "rome": "12.1.0",
+        "rome": "12.1.1",
         "tsup": "6.7.0",
         "type-fest": "3.10.0",
         "typescript": "5.0.4"

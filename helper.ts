@@ -1,4 +1,5 @@
-import { type OverrideCreator } from "eslint-config-galex/dist/types"
+import consola from "consola"
+import type { OverrideCreator } from "eslint-config-galex/dist/types"
 import { getPackageInfoSync, isPackageExists } from "local-pkg"
 
 export { defineConfig, defineFlatConfig } from "eslint-define-config"
@@ -34,8 +35,7 @@ export const resolveProject = () => {
     }
 
     if (process.env.DEBUG?.includes("eslint")) {
-        // eslint-disable-next-line no-console
-        console.log("Resolved project:", project)
+        consola.debug("Resolved project:", project)
     }
 
     return project
