@@ -52,7 +52,7 @@
         "@types/node": "20.2.0",
         "eslint": "8.40.0",
         "publint": "0.1.11",
-        "rome": "12.1.1",
+        "rome": "12.1.2",
         "tsup": "6.7.0",
         "type-fest": "3.10.0",
         "typescript": "5.0.4"
