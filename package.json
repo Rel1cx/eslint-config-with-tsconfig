@@ -54,7 +54,7 @@
         "publint": "0.1.11",
         "rome": "12.1.1",
         "tsup": "6.7.0",
-        "type-fest": "3.10.0",
+        "type-fest": "3.11.0",
         "typescript": "5.0.4"
     },
     "peerDependencies": {
