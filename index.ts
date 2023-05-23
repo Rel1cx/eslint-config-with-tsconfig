@@ -117,7 +117,7 @@ const tsOverrideConfig = createTypeScriptOverride({
         "no-use-before-define": "error",
         "prefer-object-spread": "off",
         "@typescript-eslint/no-useless-empty-export": "off",
-        "promise/prefer-await-to-then": "warn",
+        "promise/prefer-await-to-then": "off",
         "quote-props": ["error", "as-needed"],
         "require-unicode-regexp": "warn",
         "simple-import-sort/exports": "warn",

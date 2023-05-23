@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "1.4.9",
+    "version": "1.5.0",
     "description": "Mikufied's ESLint config",
     "exports": {
         ".": {
@@ -48,7 +48,7 @@
     },
     "devDependencies": {
         "@types/confusing-browser-globals": "1.0.0",
-        "@types/eslint": "8.37.0",
+        "@types/eslint": "8.40.0",
         "@types/node": "20.2.3",
         "eslint": "8.41.0",
         "publint": "0.1.12",
