@@ -195,6 +195,7 @@ const reactOverrideConfig = createReactOverride({
         "react/require-default-props": "off",
         "react-hooks/exhaustive-deps": "warn",
         "react-hooks/rules-of-hooks": "warn",
+        "react-refresh/only-export-components": "warn",
     },
 })
 
@@ -205,8 +206,10 @@ export default createConfig({
     },
     incrementalAdoption: false,
     overrides: [tsOverrideConfig, reactOverrideConfig],
-    plugins: ["regexp", "simple-import-sort", "functional", "deprecation", "sort"],
+    plugins: ["react-refresh", "regexp", "simple-import-sort", "functional", "deprecation", "sort"],
     settings: {
+        parserOptions: { ecmaVersion: "latest", sourceType: "module" },
+        react: { version: "detect" },
         "import/resolver": {
             typescript: {
                 alwaysTryTypes: true,

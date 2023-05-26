@@ -39,6 +39,7 @@
         "eslint-plugin-functional": "^5.0.8",
         "eslint-plugin-github": "^4.7.0",
         "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-react-refresh": "0.4.1",
         "eslint-plugin-regexp": "^1.15.0",
         "eslint-plugin-security": "^1.7.1",
         "eslint-plugin-simple-import-sort": "^10.0.0",
@@ -49,7 +50,7 @@
     "devDependencies": {
         "@types/confusing-browser-globals": "1.0.0",
         "@types/eslint": "8.40.0",
-        "@types/node": "20.2.3",
+        "@types/node": "20.2.4",
         "eslint": "8.41.0",
         "publint": "0.1.12",
         "rome": "12.1.2",
