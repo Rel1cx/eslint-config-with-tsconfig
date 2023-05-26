@@ -195,7 +195,7 @@ const reactOverrideConfig = createReactOverride({
         "react/require-default-props": "off",
         "react-hooks/exhaustive-deps": "warn",
         "react-hooks/rules-of-hooks": "warn",
-        "react-refresh/only-export-components": "warn",
+        "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
     },
 })
 
