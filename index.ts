@@ -19,6 +19,7 @@ const tsOverrideConfig = createTypeScriptOverride({
         "plugin:functional/recommended",
         "plugin:functional/stylistic",
         "plugin:functional/external-typescript-recommended",
+        "plugin:rxjs/recommended",
         "plugin:security/recommended",
         "plugin:case-police/recommended",
     ],
@@ -206,7 +207,7 @@ export default createConfig({
     },
     incrementalAdoption: false,
     overrides: [tsOverrideConfig, reactOverrideConfig],
-    plugins: ["react-refresh", "regexp", "simple-import-sort", "functional", "deprecation", "sort"],
+    plugins: ["react-refresh", "regexp", "simple-import-sort", "functional", "rxjs", "deprecation", "sort"],
     settings: {
         parserOptions: { ecmaVersion: "latest", sourceType: "module" },
         react: { version: "detect" },
