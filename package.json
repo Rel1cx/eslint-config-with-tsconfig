@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "1.5.3",
+    "version": "1.5.4",
     "description": "Mikufied's ESLint config",
     "exports": {
         ".": {
