@@ -50,7 +50,7 @@
     "devDependencies": {
         "@types/confusing-browser-globals": "1.0.0",
         "@types/eslint": "8.40.1",
-        "@types/node": "20.2.6",
+        "@types/node": "20.3.0",
         "eslint": "8.42.0",
         "publint": "0.1.12",
         "rome": "12.1.3",
