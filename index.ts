@@ -71,6 +71,9 @@ const tsOverrideConfig = createTypeScriptOverride({
         "functional/type-declaration-immutability": "off",
         "functional/prefer-tacit": "warn",
         "functional/prefer-immutable-types": "off",
+        "functional/no-try-statements": "off",
+        "functional/no-throw-statements": "off",
+        "functional/no-this-expressions": "off",
         "functional/no-return-void": "off",
         "functional/no-mixed-types": "off",
         "functional/no-loop-statements": "off",
@@ -79,6 +82,7 @@ const tsOverrideConfig = createTypeScriptOverride({
         "functional/no-classes": "off",
         "functional/immutable-data": "off",
         "functional/functional-parameters": "off",
+        "total-functions/no-unsafe-readonly-mutable-assignment": "off",
 
         "import/order": "off",
         "import/no-unused-modules": "off",
