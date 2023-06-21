@@ -1,7 +1,7 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "1.5.7",
-    "description": "Mikufied's ESLint config",
+    "version": "1.5.8",
+    "description": "Rel1cx's ESLint config",
     "exports": {
         ".": {
             "types": "./lib/index.d.ts",
@@ -33,7 +33,7 @@
         "consola": "^3.1.0",
         "eslint-config-galex": "^4.5.2",
         "eslint-config-typed-fp": "5.1.0",
-        "eslint-define-config": "^1.20.0",
+        "eslint-define-config": "^1.21.0",
         "eslint-import-resolver-typescript": "^3.5.5",
         "eslint-plugin-case-police": "^0.6.1",
         "eslint-plugin-functional": "^5.0.8",

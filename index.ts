@@ -80,6 +80,7 @@ const tsOverrideConfig = createTypeScriptOverride({
         "functional/no-expression-statements": "off",
         "functional/no-conditional-statements": "off",
         "functional/no-classes": "off",
+        "functional/no-let": "off",
         "functional/immutable-data": "off",
         "functional/functional-parameters": "off",
         "total-functions/no-unsafe-readonly-mutable-assignment": "off",
@@ -100,16 +101,16 @@ const tsOverrideConfig = createTypeScriptOverride({
         "import/default": "off",
         "import/consistent-type-specifier-style": "off",
 
-        quotes: ["error", "double"],
-        indent: "off",
-        camelcase: "warn",
-        "dot-notation": "off",
         "max-len": [
             "error",
             {
                 code: 120,
             },
         ],
+        quotes: ["error", "double"],
+        indent: "off",
+        camelcase: "warn",
+        "dot-notation": "off",
         strict: "error",
         "spaced-comment": "off",
         "require-unicode-regexp": "warn",
@@ -126,6 +127,7 @@ const tsOverrideConfig = createTypeScriptOverride({
         "no-lonely-if": "error",
         "no-else-return": "error",
         "no-bitwise": "off",
+        "no-await-in-loop": "off",
         "array-callback-return": "off",
 
         "simple-import-sort/exports": "warn",
