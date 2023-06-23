@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "1.5.9",
+    "version": "1.6.0",
     "description": "Rel1cx's ESLint config",
     "exports": {
         ".": {
@@ -40,6 +40,7 @@
         "eslint-plugin-functional": "^5.0.8",
         "eslint-plugin-github": "^4.8.0",
         "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-jsx-a11y": "6.7.1",
         "eslint-plugin-react-refresh": "0.4.1",
         "eslint-plugin-regexp": "^1.15.0",
         "eslint-plugin-rxjs": "5.0.3",
