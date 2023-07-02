@@ -1,8 +1,11 @@
 {
-    "extends": "./tsconfig.base.json",
     "compilerOptions": {
-        "lib": ["ESNext"],
-        "types": ["node"],
+        "lib": [
+            "ESNext"
+        ],
+        "types": [
+            "node"
+        ],
         "target": "ES2021",
         "module": "CommonJS",
         "noEmit": true,
@@ -11,5 +14,8 @@
         "moduleResolution": "Node",
         "allowSyntheticDefaultImports": true
     },
-    "include": ["."]
+    "extends": "./tsconfig.base.json",
+    "include": [
+        "."
+    ]
 }

@@ -1,6 +1,5 @@
 {
     "$schema": "https://json.schemastore.org/tsconfig",
-    "display": "Default",
     "compilerOptions": {
         "esModuleInterop": true,
         "moduleResolution": "node",
@@ -24,5 +23,6 @@
         "allowUnreachableCode": false,
         "exactOptionalPropertyTypes": true,
         "checkJs": true
-    }
+    },
+    "display": "Default"
 }
