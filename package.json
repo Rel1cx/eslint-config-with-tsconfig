@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "1.6.1",
+    "version": "1.6.2",
     "description": "Rel1cx's ESLint config",
     "exports": {
         ".": {
@@ -25,6 +25,7 @@
         "dev": "tsup --watch",
         "format": "rome format . --write",
         "lint": "eslint --color . --ext .ts --fix",
+        "check": "eslint-find-rules --unused index.js",
         "prepublish": "publint && pnpm build"
     },
     "dependencies": {
@@ -39,7 +40,7 @@
         "eslint-plugin-expect-type": "^0.2.3",
         "eslint-plugin-functional": "^5.0.8",
         "eslint-plugin-github": "^4.8.0",
-        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-import": "npm:eslint-plugin-i@latest",
         "eslint-plugin-jsx-a11y": "^6.7.1",
         "eslint-plugin-react-refresh": "^0.4.1",
         "eslint-plugin-regexp": "^1.15.0",
