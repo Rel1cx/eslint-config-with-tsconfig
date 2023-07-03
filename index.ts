@@ -34,12 +34,9 @@ const tsOverrideConfig = createTypeScriptOverride({
             },
         ],
         quotes: ["error", "double"],
-        indent: "off",
-        camelcase: "warn",
         "no-multiple-empty-lines": ["error", { max: 2, maxBOF: 1 }],
         "no-bitwise": "off",
         "unicorn/template-indent": "warn",
-        "security/detect-object-injection": "off",
     },
 })
 
