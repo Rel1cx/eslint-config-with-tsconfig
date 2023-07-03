@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "1.6.6",
+    "version": "1.6.7",
     "description": "Rel1cx's ESLint config",
     "exports": {
         ".": {
@@ -29,11 +29,11 @@
     },
     "dependencies": {
         "consola": "^3.2.2",
-        "eslint-config-relicx": "^0.0.5",
+        "eslint-config-relicx": "^0.0.7",
         "eslint-plugin-import": "npm:eslint-plugin-i@latest",
-        "eslint-plugin-regexp": "1.15.0",
-        "eslint-plugin-sort": "2.10.0",
-        "get-tsconfig": "4.6.2"
+        "eslint-plugin-regexp": "^1.15.0",
+        "eslint-plugin-sort": "^2.10.0",
+        "get-tsconfig": "^4.6.2"
     },
     "devDependencies": {
         "@types/eslint": "8.40.2",
