@@ -29,7 +29,7 @@
     },
     "dependencies": {
         "consola": "^3.2.2",
-        "eslint-config-relicx": "^0.0.4",
+        "eslint-config-relicx": "^0.0.3",
         "eslint-plugin-import": "npm:eslint-plugin-i@latest",
         "eslint-plugin-regexp": "1.15.0",
         "eslint-plugin-sort": "2.10.0",
