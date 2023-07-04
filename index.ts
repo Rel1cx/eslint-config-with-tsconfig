@@ -11,9 +11,28 @@ if (process.env.DEBUG?.includes("eslint")) {
     consola.debug("Resolved project:", defaultProject)
 }
 
+// Base plugins and extends from eslint-config-relicx:
+
+// const pluginsBase = ["@typescript-eslint", "functional", "total-functions", "expect-type", "etc"]
+
+// const extendsBase = [
+//     "plugin:@typescript-eslint/recommended",
+//     "plugin:@typescript-eslint/recommended-requiring-type-checking",
+//     "plugin:sonarjs/recommended",
+//     "plugin:functional/stylistic",
+//     "typed-fp",
+//     "plugin:expect-type/recommended",
+// ]
+
 const tsOverrideConfig = createTypeScriptOverride({
     ...defaultProject,
-    extends: ["plugin:import/recommended", "plugin:regexp/recommended", "plugin:rxjs/recommended"],
+    extends: [
+        "plugin:import/recommended",
+        "plugin:regexp/recommended",
+        "plugin:rxjs/recommended",
+        "plugin:case-police/recommended",
+        "plugin:security/recommended",
+    ],
     rules: {
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/explicit-member-accessibility": "off",
@@ -61,7 +80,7 @@ export default createConfig({
     },
     incrementalAdoption: false,
     overrides: [tsOverrideConfig, reactOverrideConfig],
-    plugins: ["regexp", "rxjs", "sort"],
+    plugins: ["regexp", "rxjs", "sort", "case-police", "security"],
     settings: {
         parserOptions: { ecmaVersion: "latest", sourceType: "module" },
         react: { version: "detect" },
