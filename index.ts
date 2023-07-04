@@ -34,8 +34,6 @@ const tsOverrideConfig = createTypeScriptOverride({
         "plugin:security/recommended",
     ],
     rules: {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/explicit-member-accessibility": "off",
         "@typescript-eslint/consistent-type-assertions": "warn",
         "@typescript-eslint/ban-ts-comment": "warn",
         "@typescript-eslint/unbound-method": "error",
@@ -52,7 +50,6 @@ const tsOverrideConfig = createTypeScriptOverride({
                 code: 120,
             },
         ],
-        quotes: ["error", "double"],
         "no-multiple-empty-lines": ["error", { max: 2, maxBOF: 1 }],
         "no-bitwise": "off",
         "unicorn/template-indent": "warn",
