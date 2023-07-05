@@ -7,27 +7,30 @@ import { getTsconfig } from "get-tsconfig"
 
 const defaultProject = resolveProject()
 
+// eslint-disable-next-line functional/no-conditional-statements
 if (process.env.DEBUG?.includes("eslint")) {
+    // eslint-disable-next-line functional/no-expression-statements
     consola.debug("Resolved project:", defaultProject)
 }
 
 // Base plugins and extends from eslint-config-relicx:
 
-// const pluginsBase = ["@typescript-eslint", "functional", "total-functions", "expect-type", "etc"]
+// const pluginsBase = ["@typescript-eslint", "etc"]
 
 // const extendsBase = [
 //     "plugin:@typescript-eslint/recommended",
 //     "plugin:@typescript-eslint/recommended-requiring-type-checking",
 //     "plugin:sonarjs/recommended",
-//     "plugin:functional/stylistic",
-//     "typed-fp",
-//     "plugin:expect-type/recommended",
 // ]
 
 const tsOverrideConfig = createTypeScriptOverride({
     ...defaultProject,
     extends: [
         "plugin:import/recommended",
+        "plugin:functional/recommended",
+        "plugin:functional/external-typescript-recommended",
+        "typed-fp",
+        "plugin:expect-type/recommended",
         "plugin:regexp/recommended",
         "plugin:rxjs/recommended",
         "plugin:case-police/recommended",
@@ -38,6 +41,8 @@ const tsOverrideConfig = createTypeScriptOverride({
         "@typescript-eslint/ban-ts-comment": "warn",
         "@typescript-eslint/unbound-method": "error",
         "@typescript-eslint/no-useless-empty-export": "off",
+
+        "total-functions/no-unsafe-readonly-mutable-assignment": "off",
 
         "etc/throw-error": "warn",
         "etc/prefer-less-than": "off",
@@ -77,7 +82,7 @@ export default createConfig({
     },
     incrementalAdoption: false,
     overrides: [tsOverrideConfig, reactOverrideConfig],
-    plugins: ["regexp", "rxjs", "sort", "case-police", "security"],
+    plugins: ["functional", "total-functions", "expect-type", "regexp", "rxjs", "sort", "case-police", "security"],
     settings: {
         parserOptions: { ecmaVersion: "latest", sourceType: "module" },
         react: { version: "detect" },
