@@ -1,8 +1,8 @@
 import { consola } from "consola"
-import { createConfig } from "eslint-config-relicx/dist/createConfig"
-import { resolveProject } from "eslint-config-relicx/dist/helper"
-import { createReactOverride } from "eslint-config-relicx/dist/overrides/react"
-import { createTypeScriptOverride } from "eslint-config-relicx/dist/overrides/typescript"
+import { createConfig } from "eslint-config-relicx/lib/createConfig"
+import { resolveProject } from "eslint-config-relicx/lib/helper"
+import { createReactOverride } from "eslint-config-relicx/lib/overrides/react"
+import { createTypeScriptOverride } from "eslint-config-relicx/lib/overrides/typescript"
 import { getTsconfig } from "get-tsconfig"
 
 const defaultProject = resolveProject()

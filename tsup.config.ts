@@ -7,6 +7,7 @@ export default defineConfig(() => ({
     entry: ["./index.ts", "./helper.ts"],
     outDir: "lib",
     ignoreWatch: ["lib"],
+    skipNodeModulesBundle: true,
     treeshake: true,
     sourcemap: true,
     dts: true,
