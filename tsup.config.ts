@@ -6,7 +6,6 @@ export default defineConfig(() => ({
     format: ["cjs"],
     entry: ["./index.ts", "./helper.ts"],
     outDir: "lib",
-    ignoreWatch: ["lib"],
     skipNodeModulesBundle: true,
     treeshake: true,
     sourcemap: true,
