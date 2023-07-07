@@ -13,16 +13,6 @@ if (process.env.DEBUG?.includes("eslint")) {
     consola.debug("Resolved project:", defaultProject)
 }
 
-// Base plugins and extends from eslint-config-relicx:
-
-// const pluginsBase = ["@typescript-eslint", "etc"]
-
-// const extendsBase = [
-//     "plugin:@typescript-eslint/recommended",
-//     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-//     "plugin:sonarjs/recommended",
-// ]
-
 const tsOverrideConfig = createTypeScriptOverride({
     ...defaultProject,
     extends: [
