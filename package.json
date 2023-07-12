@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "1.9.4",
+    "version": "1.9.5",
     "description": "Rel1cx's ESLint config",
     "exports": {
         ".": {
@@ -38,7 +38,6 @@
         "eslint-plugin-case-police": "^0.6.1",
         "eslint-plugin-etc": "^2.0.3",
         "eslint-plugin-expect-type": "^0.2.3",
-        "eslint-plugin-functional": "^5.0.8",
         "eslint-plugin-import": "npm:eslint-plugin-i@latest",
         "eslint-plugin-promise": "^6.1.1",
         "eslint-plugin-react": "^7.32.2",
@@ -51,7 +50,6 @@
         "eslint-plugin-sonarjs": "^0.19.0",
         "eslint-plugin-sort": "^2.10.0",
         "eslint-plugin-tailwindcss": "^3.13.0",
-        "eslint-plugin-total-functions": "^7.0.7",
         "eslint-plugin-unicorn": "^47.0.0",
         "get-tsconfig": "^4.6.2"
     },
