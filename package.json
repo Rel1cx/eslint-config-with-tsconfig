@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "1.9.6",
+    "version": "1.9.7",
     "description": "Rel1cx's ESLint config",
     "exports": {
         ".": {
@@ -32,7 +32,7 @@
         "@typescript-eslint/eslint-plugin": "^6.0.0",
         "@typescript-eslint/parser": "^6.0.0",
         "consola": "^3.2.3",
-        "eslint-config-relicx": "^0.4.2",
+        "eslint-config-relicx": "^0.4.3",
         "eslint-config-typed-fp": "^5.1.0",
         "eslint-define-config": "^1.21.0",
         "eslint-plugin-case-police": "^0.6.1",
@@ -55,9 +55,9 @@
     },
     "devDependencies": {
         "@types/eslint": "8.44.0",
-        "@types/node": "20.4.1",
+        "@types/node": "20.4.2",
         "eslint": "8.44.0",
-        "eslint-config-relicx": "0.4.2",
+        "eslint-config-relicx": "0.4.3",
         "publint": "0.1.16",
         "rome": "12.1.3",
         "tsup": "7.1.0",
