@@ -1,15 +1,15 @@
-import { consola } from "consola"
-import { createConfig } from "eslint-config-relicx/lib/createConfig"
-import { resolveProject } from "eslint-config-relicx/lib/helper"
-import { createReactOverride } from "eslint-config-relicx/lib/overrides/react"
-import { createTypeScriptOverride } from "eslint-config-relicx/lib/overrides/typescript"
-import { getTsconfig } from "get-tsconfig"
+import { consola } from "consola";
+import { createConfig } from "eslint-config-relicx/lib/createConfig";
+import { resolveProject } from "eslint-config-relicx/lib/helper";
+import { createReactOverride } from "eslint-config-relicx/lib/overrides/react";
+import { createTypeScriptOverride } from "eslint-config-relicx/lib/overrides/typescript";
+import { getTsconfig } from "get-tsconfig";
 
-const tsConfigPath = getTsconfig()?.path
-const defaultProject = resolveProject()
+const tsConfigPath = getTsconfig()?.path;
+const defaultProject = resolveProject();
 
 if (process.env.DEBUG?.includes("eslint")) {
-    consola.debug("Resolved project:", defaultProject)
+    consola.debug("Resolved project:", defaultProject);
 }
 
 const tsOverrideConfig = createTypeScriptOverride({
@@ -43,7 +43,7 @@ const tsOverrideConfig = createTypeScriptOverride({
         "no-bitwise": "off",
         "unicorn/template-indent": "warn",
     },
-})
+});
 
 const reactOverrideConfig = createReactOverride({
     ...defaultProject,
@@ -57,7 +57,7 @@ const reactOverrideConfig = createReactOverride({
             },
         ],
     },
-})
+});
 
 export default createConfig({
     env: {
@@ -77,4 +77,4 @@ export default createConfig({
             },
         },
     },
-})
+});
