@@ -31,7 +31,7 @@ const tsOverrideConfig = createTypeScriptOverride({
         "etc/throw-error": "warn",
         "etc/prefer-less-than": "off",
 
-        "func-style": ["warn", "expression"],
+        "func-style": ["error", "declaration", { allowArrowFunctions: true }],
 
         "max-len": [
             "error",
@@ -52,7 +52,7 @@ const reactOverrideConfig = createReactOverride({
         "react/function-component-definition": [
             "warn",
             {
-                namedComponents: "arrow-function",
+                namedComponents: "function-declaration",
                 unnamedComponents: "arrow-function",
             },
         ],

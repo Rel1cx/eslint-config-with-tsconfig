@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "1.9.11",
+    "version": "2.0.0",
     "description": "Rel1cx's ESLint config",
     "exports": {
         ".": {
@@ -39,7 +39,7 @@
         "eslint-plugin-expect-type": "^0.2.3",
         "eslint-plugin-import": "npm:eslint-plugin-i@latest",
         "eslint-plugin-promise": "^6.1.1",
-        "eslint-plugin-react": "^7.32.2",
+        "eslint-plugin-react": "^7.33.0",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.4.3",
         "eslint-plugin-regexp": "^1.15.0",
