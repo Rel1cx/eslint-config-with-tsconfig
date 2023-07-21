@@ -28,6 +28,8 @@ const tsOverrideConfig = createTypeScriptOverride({
         "@typescript-eslint/unbound-method": "error",
         "@typescript-eslint/no-useless-empty-export": "off",
 
+        "import/no-unresolved": "error",
+
         "etc/throw-error": "warn",
         "etc/prefer-less-than": "off",
 
