@@ -68,7 +68,7 @@ export default createConfig({
     },
     incrementalAdoption: false,
     overrides: [tsOverrideConfig, reactOverrideConfig],
-    plugins: ["expect-type", "regexp", "rxjs", "sort", "case-police", "security"],
+    plugins: ["expect-type", "regexp", "rxjs", "case-police", "security"],
     settings: {
         parserOptions: { ecmaVersion: "latest", sourceType: "module" },
         react: { version: "detect" },

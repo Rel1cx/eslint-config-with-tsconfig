@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "2.0.1",
+    "version": "2.1.1",
     "description": "Rel1cx's ESLint config",
     "exports": {
         ".": {
@@ -21,9 +21,9 @@
     ],
     "scripts": {
         "build": "tsup",
-        "format": "prettier --cache --write .",
+        "format": "prettier -w -u .",
         "install:clean": "rimraf lib node_modules pnpm-lock.yaml && pnpm install",
-        "lint": "pnpm eslint --cache --color .",
+        "lint": "pnpm eslint --color .",
         "publish": "pnpm run build && pnpm publint",
         "typecheck": "pnpm tsc --noEmit"
     },
@@ -31,7 +31,7 @@
         "@typescript-eslint/eslint-plugin": "^6.1.0",
         "@typescript-eslint/parser": "^6.1.0",
         "consola": "^3.2.3",
-        "eslint-config-relicx": "^0.5.1",
+        "eslint-config-relicx": "^0.6.0",
         "eslint-config-typed-fp": "^5.1.0",
         "eslint-define-config": "^1.21.0",
         "eslint-plugin-case-police": "^0.6.1",
@@ -47,17 +47,16 @@
         "eslint-plugin-security": "^1.7.1",
         "eslint-plugin-simple-import-sort": "^10.0.0",
         "eslint-plugin-sonarjs": "^0.19.0",
-        "eslint-plugin-sort": "^2.10.0",
         "eslint-plugin-tailwindcss": "^3.13.0",
         "eslint-plugin-unicorn": "^48.0.0",
         "get-tsconfig": "^4.6.2"
     },
     "devDependencies": {
         "@types/eslint": "8.44.0",
-        "@types/node": "20.4.2",
+        "@types/node": "20.4.4",
         "concurrently": "8.2.0",
         "eslint": "8.45.0",
-        "eslint-config-relicx": "0.5.1",
+        "eslint-config-relicx": "0.6.0",
         "prettier": "3.0.0",
         "publint": "0.1.16",
         "tsup": "7.1.0",
