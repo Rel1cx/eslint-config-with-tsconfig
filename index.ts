@@ -29,6 +29,9 @@ const tsOverrideConfig = createTypeScriptOverride({
         "@typescript-eslint/no-useless-empty-export": "off",
 
         "import/no-unresolved": "error",
+        "import/named": "off",
+        "import/namespace": "off",
+        "import/no-default-export": "off",
 
         "etc/throw-error": "warn",
         "etc/prefer-less-than": "off",
@@ -51,13 +54,6 @@ const reactOverrideConfig = createReactOverride({
     ...defaultProject,
     rules: {
         "react/display-name": "off",
-        "react/function-component-definition": [
-            "warn",
-            {
-                namedComponents: "function-declaration",
-                unnamedComponents: "arrow-function",
-            },
-        ],
     },
 });
 
