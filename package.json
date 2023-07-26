@@ -1,15 +1,11 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "2.3.0",
+    "version": "2.4.6",
     "description": "Rel1cx's ESLint config",
     "exports": {
         ".": {
             "types": "./lib/index.d.ts",
             "require": "./lib/index.js"
-        },
-        "./helper": {
-            "types": "./lib/helper.d.ts",
-            "require": "./lib/helper.js"
         },
         "./tsconfig.base.json": "./tsconfig.base.json"
     },
@@ -21,49 +17,37 @@
     ],
     "scripts": {
         "build": "tsup",
-        "format": "prettier -w -u .",
-        "install:clean": "rimraf lib node_modules pnpm-lock.yaml && pnpm install",
-        "lint": "pnpm eslint --color .",
+        "format:check": "prettier -u .",
+        "format:write": "prettier -w -u .",
+        "clean": "rimraf lib node_modules pnpm-lock.yaml",
+        "lint": "pnpm eslint .",
+        "lint:fix": "pnpm eslint --fix .",
         "publish": "pnpm run build && pnpm publint",
         "typecheck": "pnpm tsc --noEmit"
     },
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^6.2.0",
-        "@typescript-eslint/parser": "^6.2.0",
+        "@typescript-eslint/eslint-plugin": "^6.3.0",
+        "@typescript-eslint/parser": "^6.3.0",
         "consola": "^3.2.3",
-        "eslint-config-relicx": "^0.7.3",
-        "eslint-config-typed-fp": "^5.1.0",
-        "eslint-define-config": "^1.21.0",
-        "eslint-plugin-case-police": "^0.6.1",
-        "eslint-plugin-etc": "^2.0.3",
+        "eslint-config-relicx": "^0.9.6",
+        "eslint-define-config": "^1.23.0",
         "eslint-plugin-expect-type": "^0.2.3",
         "eslint-plugin-import": "npm:eslint-plugin-i@latest",
-        "eslint-plugin-promise": "^6.1.1",
-        "eslint-plugin-react": "^7.33.0",
-        "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-react-refresh": "^0.4.3",
-        "eslint-plugin-regexp": "^1.15.0",
-        "eslint-plugin-rxjs": "^5.0.3",
-        "eslint-plugin-security": "^1.7.1",
-        "eslint-plugin-simple-import-sort": "^10.0.0",
-        "eslint-plugin-sonarjs": "^0.19.0",
-        "eslint-plugin-tailwindcss": "^3.13.0",
-        "eslint-plugin-unicorn": "^48.0.0",
-        "get-tsconfig": "^4.6.2"
+        "get-tsconfig": "^4.7.0"
     },
     "devDependencies": {
-        "@types/eslint": "8.44.1",
-        "@types/node": "20.4.4",
+        "@types/eslint": "8.44.2",
+        "@types/node": "20.4.9",
         "concurrently": "8.2.0",
-        "eslint": "8.45.0",
-        "prettier": "3.0.0",
-        "publint": "0.1.16",
-        "tsup": "7.1.0",
-        "type-fest": "4.0.0",
+        "eslint": "8.46.0",
+        "prettier": "3.0.1",
+        "publint": "0.2.0",
+        "tsup": "7.2.0",
+        "type-fest": "4.2.0",
         "typescript": "5.1.6"
     },
     "peerDependencies": {
-        "eslint": ">=8.43.0",
+        "eslint": ">=8.46.0",
         "typescript": ">=5.1.6"
     },
     "engines": {
