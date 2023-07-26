@@ -22,7 +22,11 @@
         "allowUnusedLabels": false,
         "allowUnreachableCode": false,
         "exactOptionalPropertyTypes": true,
-        "checkJs": true
-    },
-    "display": "Default"
+        "checkJs": true,
+        "plugins": [
+            {
+                "name": "eslint-plugin-import-access"
+            }
+        ]
+    }
 }

@@ -1,12 +1,12 @@
 import { consola } from "consola";
 import { createConfig } from "eslint-config-relicx/lib/createConfig";
-import { resolveProject } from "eslint-config-relicx/lib/helper";
+import { getDependencies } from "eslint-config-relicx/lib/getDependencies";
 import { createReactOverride } from "eslint-config-relicx/lib/overrides/react";
 import { createTypeScriptOverride } from "eslint-config-relicx/lib/overrides/typescript";
 import { getTsconfig } from "get-tsconfig";
 
 const tsConfigPath = getTsconfig()?.path;
-const defaultProject = resolveProject();
+const defaultProject = getDependencies({});
 
 if (process.env.DEBUG?.includes("eslint")) {
     consola.debug("Resolved project:", defaultProject);
@@ -14,27 +14,12 @@ if (process.env.DEBUG?.includes("eslint")) {
 
 const tsOverrideConfig = createTypeScriptOverride({
     ...defaultProject,
-    extends: [
-        "plugin:import/recommended",
-        "plugin:expect-type/recommended",
-        "plugin:regexp/recommended",
-        "plugin:rxjs/recommended",
-        "plugin:case-police/recommended",
-        "plugin:security/recommended",
-    ],
+    extends: ["plugin:import/recommended"],
     rules: {
-        "@typescript-eslint/consistent-type-assertions": "warn",
-        "@typescript-eslint/ban-ts-comment": "warn",
-        "@typescript-eslint/unbound-method": "error",
-        "@typescript-eslint/no-useless-empty-export": "off",
-
         "import/no-unresolved": "error",
         "import/named": "off",
         "import/namespace": "off",
         "import/no-default-export": "off",
-
-        "etc/throw-error": "warn",
-        "etc/prefer-less-than": "off",
 
         "func-style": ["error", "declaration", { allowArrowFunctions: true }],
 
@@ -44,9 +29,10 @@ const tsOverrideConfig = createTypeScriptOverride({
                 code: 120,
             },
         ],
+
         "no-multiple-empty-lines": ["error", { max: 2, maxBOF: 1 }],
-        "no-bitwise": "off",
-        "unicorn/template-indent": "warn",
+
+        "import-access/jsdoc": ["error"],
     },
 });
 
@@ -64,7 +50,7 @@ export default createConfig({
     },
     incrementalAdoption: false,
     overrides: [tsOverrideConfig, reactOverrideConfig],
-    plugins: ["expect-type", "regexp", "rxjs", "case-police", "security"],
+    plugins: ["import-access", "expect-type"],
     settings: {
         parserOptions: { ecmaVersion: "latest", sourceType: "module" },
         react: { version: "detect" },
