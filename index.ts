@@ -1,12 +1,12 @@
 import { consola } from "consola";
 import { createConfig } from "eslint-config-relicx/lib/createConfig";
-import { resolveProject } from "eslint-config-relicx/lib/helper";
+import { getDependencies } from "eslint-config-relicx/lib/getDependencies";
 import { createReactOverride } from "eslint-config-relicx/lib/overrides/react";
 import { createTypeScriptOverride } from "eslint-config-relicx/lib/overrides/typescript";
 import { getTsconfig } from "get-tsconfig";
 
 const tsConfigPath = getTsconfig()?.path;
-const defaultProject = resolveProject();
+const defaultProject = getDependencies({});
 
 if (process.env.DEBUG?.includes("eslint")) {
     consola.debug("Resolved project:", defaultProject);
@@ -14,14 +14,7 @@ if (process.env.DEBUG?.includes("eslint")) {
 
 const tsOverrideConfig = createTypeScriptOverride({
     ...defaultProject,
-    extends: [
-        "plugin:import/recommended",
-        "plugin:expect-type/recommended",
-        "plugin:regexp/recommended",
-        "plugin:rxjs/recommended",
-        "plugin:case-police/recommended",
-        "plugin:security/recommended",
-    ],
+    extends: ["plugin:import/recommended", "plugin:expect-type/recommended"],
     rules: {
         "@typescript-eslint/consistent-type-assertions": "warn",
         "@typescript-eslint/ban-ts-comment": "warn",
@@ -64,7 +57,7 @@ export default createConfig({
     },
     incrementalAdoption: false,
     overrides: [tsOverrideConfig, reactOverrideConfig],
-    plugins: ["expect-type", "regexp", "rxjs", "case-police", "security"],
+    plugins: ["expect-type"],
     settings: {
         parserOptions: { ecmaVersion: "latest", sourceType: "module" },
         react: { version: "detect" },
