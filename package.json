@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "2.4.7",
+    "version": "2.4.10",
     "description": "Rel1cx's ESLint config",
     "exports": {
         ".": {
@@ -21,28 +21,27 @@
         "format:write": "prettier -w -u .",
         "clean": "rimraf lib node_modules pnpm-lock.yaml",
         "lint": "pnpm eslint .",
-        "lint:fix": "pnpm eslint --fix .",
+        "fix:ts": "pnpm eslint --fix .",
         "publish": "pnpm run build && pnpm publint",
         "typecheck": "pnpm tsc --noEmit"
     },
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^6.4.0",
-        "@typescript-eslint/parser": "^6.4.0",
+        "@typescript-eslint/eslint-plugin": "^6.4.1",
+        "@typescript-eslint/parser": "^6.4.1",
         "consola": "^3.2.3",
-        "eslint-config-relicx": "^0.9.9",
+        "eslint-config-relicx": "^0.10.2",
         "eslint-define-config": "^1.23.0",
         "eslint-plugin-expect-type": "^0.2.3",
-        "eslint-plugin-import": "npm:eslint-plugin-i@latest",
         "eslint-plugin-import-access": "2.1.1",
         "get-tsconfig": "^4.7.0"
     },
     "devDependencies": {
         "@types/eslint": "8.44.2",
-        "@types/node": "20.5.0",
-        "concurrently": "8.2.0",
+        "@types/node": "20.5.2",
+        "concurrently": "8.2.1",
         "eslint": "8.47.0",
-        "prettier": "3.0.1",
-        "publint": "0.2.0",
+        "prettier": "3.0.2",
+        "publint": "0.2.2",
         "tsup": "7.2.0",
         "type-fest": "4.2.0",
         "typescript": "5.1.6"
