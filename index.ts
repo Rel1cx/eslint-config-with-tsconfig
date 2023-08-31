@@ -14,16 +14,7 @@ const tsOverrideConfig = createTypeScriptOverride({
     ...defaultProject,
     rules: {
         "func-style": ["error", "declaration", { allowArrowFunctions: true }],
-
-        "max-len": [
-            "error",
-            {
-                code: 120,
-            },
-        ],
-
         "no-multiple-empty-lines": ["error", { max: 2, maxBOF: 1 }],
-
         "import-access/jsdoc": ["error"],
     },
 });

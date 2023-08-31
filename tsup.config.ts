@@ -4,7 +4,7 @@ export default defineConfig(() => ({
     platform: "node",
     target: "node18",
     format: ["cjs"],
-    entry: ["./index.ts", "./helper.ts"],
+    entry: ["./index.ts", "./prettier.ts"],
     outDir: "lib",
     skipNodeModulesBundle: true,
     treeshake: true,
