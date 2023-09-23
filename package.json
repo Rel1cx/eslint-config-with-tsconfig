@@ -43,7 +43,7 @@
         "prettier-plugin-toml": "1.0.0"
     },
     "devDependencies": {
-        "@types/eslint": "8.44.2",
+        "@types/eslint": "8.44.3",
         "@types/node": "20.6.3",
         "concurrently": "8.2.1",
         "eslint": "8.50.0",
