@@ -32,7 +32,7 @@
         "@typescript-eslint/eslint-plugin": "6.6.0",
         "@typescript-eslint/parser": "6.6.0",
         "consola": "3.2.3",
-        "eslint-config-relicx": "0.12.12",
+        "eslint-config-relicx": "0.12.13",
         "eslint-define-config": "1.23.0",
         "eslint-plugin-expect-type": "0.2.3",
         "eslint-plugin-import-access": "2.1.1",
