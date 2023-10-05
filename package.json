@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-with-tsconfig",
-    "version": "2.7.2",
+    "version": "2.7.3",
     "description": "Rel1cx's ESLint config",
     "exports": {
         ".": {
