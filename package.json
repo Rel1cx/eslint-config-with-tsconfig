@@ -18,12 +18,13 @@
     "scripts": {
         "build": "tsup",
         "clean": "rimraf lib node_modules bun.lockb",
-        "fix:ts": "bun x eslint --fix .",
+        "fix:ts": "eslint --fix .",
         "format:check": "dprint check",
         "format:write": "dprint fmt",
-        "lint:ts": "bun x eslint .",
-        "publish": "bun run build && pnpm publint",
-        "typecheck": "bun x tsc --noEmit"
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix .",
+        "lint:type": "tsc --noEmit",
+        "publish": "bun run build && pnpm publint"
     },
     "dependencies": {
         "@babel/core": "7.23.0",
