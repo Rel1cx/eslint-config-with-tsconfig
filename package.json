@@ -28,14 +28,14 @@
         "publish": "bun run build && pnpm publint"
     },
     "dependencies": {
-        "@babel/core": "7.23.0",
+        "@babel/core": "7.23.2",
         "@babel/eslint-parser": "7.22.15",
         "@babel/preset-react": "7.22.15",
-        "@typescript-eslint/eslint-plugin": "6.7.4",
-        "@typescript-eslint/parser": "6.7.4",
+        "@typescript-eslint/eslint-plugin": "6.7.5",
+        "@typescript-eslint/parser": "6.7.5",
         "consola": "3.2.3",
         "eslint-config-relicx": "0.12.15",
-        "eslint-define-config": "1.24.0",
+        "eslint-define-config": "1.24.1",
         "eslint-plugin-expect-type": "0.2.3",
         "eslint-plugin-import-access": "2.1.1",
         "eslint-plugin-perfectionist": "1.5.1",
@@ -52,11 +52,11 @@
         "get-tsconfig": "4.7.2"
     },
     "devDependencies": {
-        "@types/eslint": "8.44.3",
-        "@types/node": "20.8.3",
+        "@types/eslint": "8.44.4",
+        "@types/node": "20.8.4",
         "dprint": "0.41.0",
         "eslint": ">=8.51.0",
-        "publint": "0.2.3",
+        "publint": "0.2.4",
         "taze": "0.11.3",
         "tsup": "7.2.0",
         "type-fest": "4.4.0",
@@ -66,7 +66,7 @@
         "eslint": ">=8.49.0",
         "typescript": ">=5.2.2"
     },
-    "packageManager": "bun@1.0.4",
+    "packageManager": "bun@1.0.5",
     "engines": {
         "bun": ">=1.0.3",
         "node": ">=18.16.0"
