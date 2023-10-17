@@ -27,7 +27,7 @@ const reactOverrideConfig = createReactOverride({
 export default createConfig({
     env: {
         browser: true,
-        es2021: true,
+        es2024: true,
     },
     incrementalAdoption: false,
     overrides: [tsOverrideConfig, reactOverrideConfig],
