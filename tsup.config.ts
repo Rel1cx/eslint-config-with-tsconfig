@@ -3,7 +3,7 @@ import { defineConfig } from "tsup";
 export default defineConfig(() => ({
     platform: "node",
     target: "node18",
-    format: ["cjs"],
+    format: ["cjs", "esm"],
     entry: ["./index.ts"],
     outDir: "lib",
     skipNodeModulesBundle: false,
