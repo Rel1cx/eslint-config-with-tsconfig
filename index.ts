@@ -7,32 +7,32 @@ import { createTypeScriptOverride } from "eslint-config-relicx/lib/overrides/typ
 const defaultProject = getDependencies({});
 
 if (process.env.DEBUG?.includes("eslint")) {
-    consola.debug("Resolved project:", defaultProject);
+  consola.debug("Resolved project:", defaultProject);
 }
 
 const tsOverrideConfig = createTypeScriptOverride({
-    ...defaultProject,
-    rules: {
-        "func-style": ["error", "declaration", { allowArrowFunctions: true }],
-        "no-multiple-empty-lines": ["error", { max: 2, maxBOF: 1 }],
-        "import-access/jsdoc": ["error"],
-    },
+  ...defaultProject,
+  rules: {
+    "func-style": ["error", "declaration", { allowArrowFunctions: true }],
+    "no-multiple-empty-lines": ["error", { max: 2, maxBOF: 1 }],
+    "import-access/jsdoc": ["error"],
+  },
 });
 
 const reactOverrideConfig = createReactOverride({
-    ...defaultProject,
-    rules: {},
+  ...defaultProject,
+  rules: {},
 });
 
 export default createConfig({
-    env: {
-        es2024: true,
-    },
-    incrementalAdoption: false,
-    overrides: [tsOverrideConfig, reactOverrideConfig],
-    plugins: ["import-access", "expect-type"],
-    settings: {
-        parserOptions: { ecmaVersion: "latest", sourceType: "module" },
-        react: { version: "detect" },
-    },
+  env: {
+    es2024: true,
+  },
+  incrementalAdoption: false,
+  overrides: [tsOverrideConfig, reactOverrideConfig],
+  plugins: ["import-access", "expect-type"],
+  settings: {
+    parserOptions: { ecmaVersion: "latest", sourceType: "module" },
+    react: { version: "detect" },
+  },
 });

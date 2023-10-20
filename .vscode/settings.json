@@ -1,25 +1,25 @@
 {
-    "search.exclude": {
-        "docs": true
+  "search.exclude": {
+    "docs": true
+  },
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "[typescript]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
     },
-    "typescript.enablePromptUseWorkspaceTsdk": true,
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "[typescript]": {
-        "editor.defaultFormatter": "dprint.dprint"
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[jsonc]": {
+    "editor.quickSuggestions": {
+      "strings": true
     },
-    "[json]": {
-        "editor.quickSuggestions": {
-            "strings": true
-        },
-        "editor.defaultFormatter": "dprint.dprint"
-    },
-    "[jsonc]": {
-        "editor.quickSuggestions": {
-            "strings": true
-        },
-        "editor.defaultFormatter": "dprint.dprint"
-    },
-    "[markdown]": {
-        "editor.defaultFormatter": "dprint.dprint"
-    }
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  }
 }
