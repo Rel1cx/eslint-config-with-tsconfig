@@ -64,7 +64,7 @@
         "dprint": "0.41.0",
         "eslint": ">=8.52.0",
         "publint": "0.2.5",
-        "taze": "0.11.4",
+        "taze": "0.12.0",
         "tsup": "7.2.0",
         "type-fest": "4.6.0",
         "typescript": ">=5.2.2"
