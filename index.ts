@@ -1,8 +1,8 @@
 import { consola } from "consola";
-import { createConfig } from "eslint-config-relicx/lib/createConfig";
-import { getDependencies } from "eslint-config-relicx/lib/getDependencies";
-import { createReactOverride } from "eslint-config-relicx/lib/overrides/react";
-import { createTypeScriptOverride } from "eslint-config-relicx/lib/overrides/typescript";
+import { createConfig } from "eslint-config-rel1cx/lib/createConfig";
+import { getDependencies } from "eslint-config-rel1cx/lib/getDependencies";
+import { createReactOverride } from "eslint-config-rel1cx/lib/overrides/react";
+import { createTypeScriptOverride } from "eslint-config-rel1cx/lib/overrides/typescript";
 
 const defaultProject = getDependencies({});
 
