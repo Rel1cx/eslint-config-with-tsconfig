@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "@types/eslint": "8.44.6",
-    "@types/node": "20.8.9",
+    "@types/node": "20.8.10",
     "dprint": "0.42.5",
     "eslint": ">=8.52.0",
     "publint": "0.2.5",
