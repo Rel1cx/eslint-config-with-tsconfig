@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-with-tsconfig",
-  "version": "2.9.4",
+  "version": "2.9.41",
   "description": "Rel1cx's ESLint config",
   "exports": {
     ".": {
@@ -41,7 +41,7 @@
     "@typescript-eslint/eslint-plugin": "6.9.1",
     "@typescript-eslint/parser": "6.9.1",
     "consola": "3.2.3",
-    "eslint-config-rel1cx": "0.12.3",
+    "eslint-config-rel1cx": "0.12.41",
     "eslint-define-config": "1.24.1",
     "eslint-plugin-expect-type": "0.2.3",
     "eslint-plugin-import-access": "2.1.2",
@@ -53,7 +53,7 @@
     "eslint-plugin-rxjs": "5.0.3",
     "eslint-plugin-security": "1.7.1",
     "eslint-plugin-simple-import-sort": "10.0.0",
-    "eslint-plugin-sonarjs": "0.22.0",
+    "eslint-plugin-sonarjs": "0.23.0",
     "eslint-plugin-tailwindcss": "3.13.0",
     "eslint-plugin-unicorn": "49.0.0",
     "get-tsconfig": "4.7.2"
@@ -62,7 +62,7 @@
     "@types/eslint": "8.44.6",
     "@types/node": "20.8.10",
     "dprint": "0.42.5",
-    "eslint": ">=8.52.0",
+    "eslint": ">=8.53.0",
     "publint": "0.2.5",
     "taze": "0.12.0",
     "tsup": "7.2.0",
@@ -73,7 +73,7 @@
     "eslint": ">=8.49.0",
     "typescript": ">=5.2.2"
   },
-  "packageManager": "bun@1.0.7",
+  "packageManager": "bun@1.0.8",
   "engines": {
     "bun": ">=1.0.3",
     "node": ">=18.16.0"
