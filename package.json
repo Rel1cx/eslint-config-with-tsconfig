@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-with-tsconfig",
-  "version": "2.9.50",
+  "version": "2.9.60",
   "description": "Rel1cx's ESLint config",
   "exports": {
     ".": {
@@ -38,10 +38,10 @@
     "@babel/core": "7.23.3",
     "@babel/eslint-parser": "7.23.3",
     "@babel/preset-react": "7.23.3",
-    "@typescript-eslint/eslint-plugin": "6.10.0",
-    "@typescript-eslint/parser": "6.10.0",
+    "@typescript-eslint/eslint-plugin": "6.12.0",
+    "@typescript-eslint/parser": "6.12.0",
     "consola": "3.2.3",
-    "eslint-config-rel1cx": "0.12.50",
+    "eslint-config-rel1cx": "0.12.60",
     "eslint-define-config": "1.24.1",
     "eslint-plugin-expect-type": "0.2.3",
     "eslint-plugin-import-access": "2.1.2",
@@ -60,20 +60,20 @@
   },
   "devDependencies": {
     "@types/eslint": "8.44.7",
-    "@types/node": "20.9.2",
-    "dprint": "0.42.5",
+    "@types/node": "20.10.0",
+    "dprint": "0.43.1",
     "eslint": ">=8.54.0",
     "publint": "0.2.5",
-    "taze": "0.12.0",
+    "taze": "0.12.1",
     "tsup": "7.3.0",
-    "type-fest": "4.8.1",
-    "typescript": ">=5.2.2"
+    "type-fest": "4.8.2",
+    "typescript": ">=5.3.2"
   },
   "peerDependencies": {
     "eslint": ">=8.54.0",
-    "typescript": ">=5.2.2"
+    "typescript": ">=5.3.2"
   },
-  "packageManager": "bun@1.0.11",
+  "packageManager": "bun@1.0.13",
   "engines": {
     "bun": ">=1.0.3",
     "node": ">=18.16.0"
