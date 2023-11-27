@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-with-tsconfig",
-  "version": "2.9.60",
+  "version": "2.9.70",
   "description": "Rel1cx's ESLint config",
   "exports": {
     ".": {
@@ -24,7 +24,6 @@
   ],
   "scripts": {
     "build": "tsup",
-    "update": "taze",
     "clean": "rimraf lib node_modules bun.lockb",
     "fix:ts": "eslint --fix .",
     "format:check": "dprint check",
@@ -32,16 +31,17 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "lint:type": "tsc --noEmit",
-    "publish": "bun run build && pnpm publint"
+    "publish": "bun run build && pnpm publint",
+    "update": "taze"
   },
   "dependencies": {
     "@babel/core": "7.23.3",
     "@babel/eslint-parser": "7.23.3",
     "@babel/preset-react": "7.23.3",
-    "@typescript-eslint/eslint-plugin": "6.12.0",
-    "@typescript-eslint/parser": "6.12.0",
+    "@typescript-eslint/eslint-plugin": "6.13.0",
+    "@typescript-eslint/parser": "6.13.0",
     "consola": "3.2.3",
-    "eslint-config-rel1cx": "0.12.60",
+    "eslint-config-rel1cx": "0.12.70",
     "eslint-define-config": "1.24.1",
     "eslint-plugin-expect-type": "0.2.3",
     "eslint-plugin-import-access": "2.1.2",
@@ -55,6 +55,7 @@
     "eslint-plugin-simple-import-sort": "10.0.0",
     "eslint-plugin-sonarjs": "0.23.0",
     "eslint-plugin-tailwindcss": "3.13.0",
+    "eslint-plugin-total-functions": "7.1.0",
     "eslint-plugin-unicorn": "49.0.0",
     "get-tsconfig": "4.7.2"
   },
@@ -64,7 +65,7 @@
     "dprint": "0.43.1",
     "eslint": ">=8.54.0",
     "publint": "0.2.5",
-    "taze": "0.12.1",
+    "taze": "0.12.2",
     "tsup": "7.3.0",
     "type-fest": "4.8.2",
     "typescript": ">=5.3.2"

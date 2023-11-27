@@ -29,10 +29,13 @@ export default createConfig({
     es2024: true,
   },
   incrementalAdoption: false,
-  overrides: [tsOverrideConfig, reactOverrideConfig],
-  plugins: ["import-access", "expect-type"],
+  extends: [
+    "plugin:total-functions/recommended",
+  ],
+  plugins: ["import-access", "total-functions", "expect-type"],
   settings: {
     parserOptions: { ecmaVersion: "latest", sourceType: "module" },
     react: { version: "detect" },
   },
+  overrides: [tsOverrideConfig, reactOverrideConfig],
 });
