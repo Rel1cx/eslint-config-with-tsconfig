@@ -12,6 +12,7 @@ if (process.env.DEBUG?.includes("eslint")) {
 
 const tsOverrideConfig = createTypeScriptOverride({
   ...defaultProject,
+  files: ["*.ts", "*.tsx"],
   rules: {
     "func-style": ["error", "declaration", { allowArrowFunctions: true }],
     "no-multiple-empty-lines": ["error", { max: 2, maxBOF: 1 }],
@@ -21,6 +22,7 @@ const tsOverrideConfig = createTypeScriptOverride({
 
 const reactOverrideConfig = createReactOverride({
   ...defaultProject,
+  files: ["*.ts", "*.tsx"],
   rules: {},
 });
 
@@ -29,9 +31,6 @@ export default createConfig({
     es2024: true,
   },
   incrementalAdoption: false,
-  extends: [
-    "plugin:total-functions/recommended",
-  ],
   plugins: ["import-access", "total-functions", "expect-type"],
   settings: {
     parserOptions: { ecmaVersion: "latest", sourceType: "module" },
