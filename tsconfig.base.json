@@ -1,32 +1,27 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": [
+    "@tsconfig/strictest/tsconfig.json"
+  ],
   "compilerOptions": {
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "noImplicitAny": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "isolatedModules": true,
-    "forceConsistentCasingInFileNames": true,
-    "pretty": true,
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
+    "allowJs": false,
+    "checkJs": false,
     "strict": true,
-    "alwaysStrict": true,
+    "noImplicitAny": true,
     "noImplicitThis": true,
-    "noUncheckedIndexedAccess": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noImplicitOverride": true,
-    "noUnusedParameters": false,
     "noUnusedLocals": false,
-    "useUnknownInCatchVariables": true,
-    "preserveConstEnums": true,
-    "allowUnusedLabels": false,
-    "allowUnreachableCode": false,
+    "noUnusedParameters": false,
     "exactOptionalPropertyTypes": true,
-    "checkJs": true,
-    "plugins": [
-      {
-        "name": "eslint-plugin-import-access"
-      }
-    ]
-  }
+    "composite": false,
+    "stripInternal": false
+  },
+  "exclude": [
+    "node_modules",
+    "**/dist",
+    "test/fixtures"
+  ]
 }

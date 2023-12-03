@@ -1,6 +1,3 @@
-# Personal ESLint configuration
+# ESLint configuration optimized for TypeScript projects
 
-This is a basic ESLint configuration for a new project. It includes:
-
-- eslintrc, supporting modern typescript and react
-- tsconfig, enhanced with some strict rules
+This is a general purpose ESLint configuration for TypeScript projects.
