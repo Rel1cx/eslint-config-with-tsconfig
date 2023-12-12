@@ -22,7 +22,7 @@ const reactOverrideConfig = createReactOverride({
 
 export default createConfig({
   env: {
-    es2024: true,
+    es2021: true,
   },
   incrementalAdoption: false,
   plugins: ["import-access", "expect-type"],
