@@ -12,6 +12,10 @@ const tsOverrideConfig = createTypeScriptOverride({
     "func-style": ["error", "declaration", { allowArrowFunctions: true }],
     "no-multiple-empty-lines": ["error", { max: 2, maxBOF: 1 }],
     "import-access/jsdoc": ["error"],
+    "@typescript-eslint/prefer-readonly": "warn",
+    "@typescript-eslint/prefer-nullish-coalescing": "error",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
   },
 });
 
