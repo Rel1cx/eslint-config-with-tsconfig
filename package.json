@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-with-tsconfig",
-  "version": "2.9.210",
+  "version": "2.9.211",
   "description": "Rel1cx's ESLint config",
   "exports": {
     ".": {
@@ -38,6 +38,7 @@
     "@babel/core": ">=7.23.6",
     "@babel/eslint-parser": ">=7.23.3",
     "@babel/preset-react": ">=7.23.3",
+    "@tsconfig/node20": ">=20.1.2",
     "@tsconfig/strictest": ">=2.0.2",
     "@typescript-eslint/eslint-plugin": ">=6.15.0",
     "@typescript-eslint/parser": ">=6.15.0",
