@@ -9,6 +9,7 @@ const tsOverrideConfig = createTypeScriptOverride({
   ...defaultProject,
   files: ["*.ts", "*.tsx"],
   rules: {
+    curly: "off",
     "func-style": ["error", "declaration", { allowArrowFunctions: true }],
     "no-multiple-empty-lines": ["error", { max: 2, maxBOF: 1 }],
     "import-access/jsdoc": ["error"],

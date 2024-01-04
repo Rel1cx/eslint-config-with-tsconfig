@@ -59,7 +59,7 @@
     "eslint": ">=8.56.0",
     "typescript": ">=5.3.3"
   },
-  "packageManager": "pnpm@8.12.1",
+  "packageManager": "pnpm@8.14.0",
   "engines": {
     "bun": ">=1.0.13",
     "node": ">=18.15.0"
