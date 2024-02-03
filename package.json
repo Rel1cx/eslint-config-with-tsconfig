@@ -46,11 +46,11 @@
   },
   "devDependencies": {
     "@types/eslint": "8.56.2",
-    "@types/node": "20.11.13",
+    "@types/node": "20.11.16",
     "dprint": "0.45.0",
     "eslint": ">=8.56.0",
     "publint": "0.2.7",
-    "taze": "0.13.1",
+    "taze": "0.13.2",
     "tsup": "8.0.1",
     "type-fest": "4.10.2",
     "typescript": ">=5.3.3"
