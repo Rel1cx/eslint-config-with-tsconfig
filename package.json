@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-with-tsconfig",
-  "version": "2.15.7",
+  "version": "2.15.8",
   "description": "Rel1cx's ESLint config",
   "exports": {
     ".": {
@@ -37,16 +37,16 @@
   "dependencies": {
     "@tsconfig/node20": "20.1.2",
     "@tsconfig/strictest": "2.0.3",
-    "@typescript-eslint/eslint-plugin": "7.1.1",
-    "@typescript-eslint/parser": "7.1.1",
-    "eslint-config-rel1cx": "0.15.7",
+    "@typescript-eslint/eslint-plugin": "7.2.0",
+    "@typescript-eslint/parser": "7.2.0",
+    "eslint-config-rel1cx": "0.15.8",
     "eslint-define-config": "2.1.0",
     "eslint-plugin-expect-type": "0.3.0",
     "eslint-plugin-import-access": "2.1.2"
   },
   "devDependencies": {
     "@types/eslint": "8.56.5",
-    "@types/node": "20.11.25",
+    "@types/node": "20.11.26",
     "dprint": "0.45.0",
     "eslint": "^8.57.0",
     "publint": "0.2.7",
@@ -57,7 +57,7 @@
   },
   "peerDependencies": {
     "eslint": ">=8.57.0",
-    "typescript": ">=5.3.3"
+    "typescript": ">=5.4.2"
   },
   "packageManager": "pnpm@8.15.4",
   "engines": {
